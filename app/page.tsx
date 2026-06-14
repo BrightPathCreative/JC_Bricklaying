@@ -142,7 +142,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
         <HeroBg src="/images/services/outdoor-fireplaces-pizza-ovens/02.jpg" priority flip />
-        <div className="container-bpc relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="container-bpc relative grid items-center gap-10 py-16 md:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
             <p
               className="inline-flex animate-[fade-up_800ms_var(--ease-out)_both] items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-white/90"
@@ -180,17 +180,17 @@ export default function HomePage() {
 
           <div
             id="quote"
-            className="animate-[fade-up_800ms_var(--ease-out)_both] scroll-mt-24 rounded-2xl bg-white p-6 shadow-2xl md:p-8"
+            className="animate-[fade-up_800ms_var(--ease-out)_both] scroll-mt-24 w-full max-w-md rounded-2xl border border-white/20 bg-white/82 p-5 shadow-xl backdrop-blur-md md:p-6 lg:ml-auto"
             style={{ animationDelay: '450ms' }}
           >
-            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark">
+            <h2 className="text-xl font-semibold tracking-tight text-brand-dark">
               Get My Free Quote
             </h2>
-            <p className="mt-1 text-sm text-brand-grey">
+            <p className="mt-1 text-xs text-brand-grey">
               Tell Jamie about your project. No obligation.
             </p>
-            <div className="mt-5">
-              <QuoteForm tone="light" />
+            <div className="mt-4">
+              <QuoteForm tone="light" compact />
             </div>
           </div>
         </div>
@@ -297,8 +297,8 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* AWARD SECTION */}
-      <section className="border-y border-white/10 bg-brand-grey">
-        <div className="container-bpc relative grid items-center gap-8 py-10 md:grid-cols-[auto_1fr] md:gap-12 md:py-12 lg:gap-14">
+      <section className="surface-brick border-y border-brand-grey/15">
+        <div className="container-bpc relative z-10 grid items-center gap-8 py-10 md:grid-cols-[auto_1fr] md:gap-12 md:py-12 lg:gap-14">
           <Reveal direction="zoom" repeat className="flex justify-center md:justify-start">
             <FramedImage
               src="/images/brand/award-badge.jpg"
@@ -311,16 +311,16 @@ export default function HomePage() {
             />
           </Reveal>
           <Reveal direction="right" repeat delay={80}>
-            <p className="eyebrow text-brand-orange">Quality Business Awards 2026</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <p className="eyebrow">Quality Business Awards 2026</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
               Recognised as One of Melbourne&apos;s Best
             </h2>
-            <p className="mt-4 max-w-2xl text-white/80">
+            <p className="mt-4 max-w-2xl text-brand-grey">
               In 2026, JC Brick &amp; Blocklaying was recognised in the top 1% of businesses in the
               Maroondah region by the Quality Business Awards. It&apos;s not something Jamie went
               looking for. It&apos;s recognition of what his clients already knew.
             </p>
-            <p className="mt-4 max-w-2xl text-base font-semibold leading-relaxed text-brand-orange md:text-lg">
+            <p className="trust-glow-orange mt-4 max-w-2xl text-base font-semibold leading-relaxed text-brand-orange md:text-lg">
               Hard work. Clean finishes. Someone who turns up on time and does the job properly.
             </p>
           </Reveal>

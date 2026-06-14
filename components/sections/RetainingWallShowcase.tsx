@@ -50,23 +50,23 @@ export function RetainingWallShowcase({
   const current = TABS.find((t) => t.id === active) ?? TABS[0]
 
   return (
-    <article className="relative overflow-hidden rounded-3xl bg-brand-grey">
+    <article className="surface-brick relative overflow-hidden rounded-3xl ring-1 ring-brand-grey/10">
       <div
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-orange/15 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-orange/10 blur-3xl"
         aria-hidden="true"
       />
-      <div className="grid items-center gap-10 p-6 md:p-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:p-12">
-        <div className="relative z-10">
-          <p className="eyebrow text-brand-orange">Structural Masonry</p>
+      <div className="relative z-10 grid items-center gap-10 p-6 md:p-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:p-12">
+        <div>
+          <p className="eyebrow">Structural Masonry</p>
           <div className="mt-4 flex items-start gap-4">
-            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-brand-orange">
+            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
               <BrickWall className="h-5 w-5" aria-hidden="true" />
             </span>
-            <h3 className="text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
+            <h3 className="text-3xl font-bold leading-tight tracking-tight text-brand-dark md:text-4xl">
               {title}
             </h3>
           </div>
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80">{description}</p>
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-brand-grey">{description}</p>
 
           <div className="mt-8">
             <div
@@ -87,8 +87,8 @@ export function RetainingWallShowcase({
                     onClick={() => setActive(tab.id)}
                     className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
                       selected
-                        ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/25'
-                        : 'bg-white/10 text-white/80 ring-1 ring-white/20 hover:bg-white/15 hover:text-white'
+                        ? 'bg-brand-orange text-white shadow-md shadow-brand-orange/20'
+                        : 'bg-white text-brand-dark ring-1 ring-brand-grey/20 hover:ring-brand-orange/35'
                     }`}
                   >
                     {tab.label}
@@ -102,8 +102,8 @@ export function RetainingWallShowcase({
               aria-labelledby={`retaining-tab-${active}`}
               className="mt-6"
             >
-              <h4 className="text-xl font-semibold text-white">{current.title}</h4>
-              <p className="mt-3 leading-relaxed text-white/75">{current.body}</p>
+              <h4 className="text-xl font-semibold text-brand-dark">{current.title}</h4>
+              <p className="mt-3 leading-relaxed text-brand-grey">{current.body}</p>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ export function RetainingWallShowcase({
             </Button>
             <Link
               href={href}
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition-colors hover:text-brand-orange"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-orange transition-colors hover:text-brand-orange-dark"
             >
               Learn more
               <ArrowRight
@@ -145,7 +145,7 @@ export function RetainingWallShowcase({
                 />
               </div>
             ))}
-            <div className="pointer-events-none absolute inset-0 z-20 rounded-2xl bg-gradient-to-t from-brand-grey/60 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 z-20 rounded-2xl bg-gradient-to-t from-brand-dark/25 via-transparent to-transparent" />
           </div>
           <div className="absolute bottom-6 left-6 z-30 flex items-center gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
             <Truck className="h-5 w-5 text-brand-orange" aria-hidden="true" />

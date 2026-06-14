@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 import { SITE, SERVICES } from '@/lib/constants'
+import { LOCATIONS } from '@/lib/locations'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -127,6 +128,33 @@ export function Footer() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Service area pages — internal links for SEO + crawlability */}
+        <div className="mt-12 border-t border-white/10 pt-10">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white/50">
+            Bricklaying Service Areas
+          </h2>
+          <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {LOCATIONS.map((loc) => (
+              <li key={loc.slug}>
+                <Link
+                  href={`/areas/${loc.slug}`}
+                  className="text-sm text-white/75 transition-colors duration-150 hover:text-brand-orange"
+                >
+                  {loc.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4">
+            <Link
+              href="/areas"
+              className="text-sm font-medium text-brand-orange transition-colors duration-150 hover:text-brand-orange-dark"
+            >
+              View all service areas →
+            </Link>
+          </p>
         </div>
 
         {/* Trust line */}
