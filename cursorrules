@@ -1,0 +1,437 @@
+# .cursorrules — JC Brick & Blocklaying
+# jcbricklaying.com.au — Next.js 14 App Router
+# Bright Path Creative — Internal Use Only
+# Do not modify without consulting the BPC copy writer and account manager.
+
+---
+
+## PROJECT OVERVIEW
+
+Client: JC Brick & Blocklaying Pty Ltd
+Owner: Jamie Craig
+Domain: jcbricklaying.com.au
+Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS
+Purpose: Lead generation website for a bricklayer in Melbourne's eastern suburbs.
+Primary goal: Rank for "Bricklayer Melbourne" and related eastern suburbs keywords. Every build decision must serve this goal.
+
+---
+
+## TECH STACK — NON-NEGOTIABLE
+
+- Next.js 14 with App Router (`/app` directory structure)
+- TypeScript throughout — no `.js` files, only `.tsx` and `.ts`
+- Tailwind CSS for all styling — no CSS modules, no styled-components
+- `next/font` for font loading — no external font CDN links
+- `next/image` for every image — no raw `<img>` tags, ever
+- `next/link` for all internal navigation — no raw `<a>` tags for internal routes
+- No `"use client"` unless strictly required (forms, interactive components only)
+- Server Components by default for all pages and layouts
+
+---
+
+## PROJECT STRUCTURE
+
+```
+/app
+  layout.tsx              ← root layout: fonts, global metadata, schema injection
+  page.tsx                ← Home page
+  /about
+    page.tsx
+  /services
+    page.tsx              ← Services Hub
+    /outdoor-fireplaces
+      page.tsx
+    /block-retaining-walls
+      page.tsx
+    /remedial-brickwork
+      page.tsx
+    /custom-mortar-matching
+      page.tsx
+    /new-builds-architectural-brickwork
+      page.tsx
+  /gallery
+    page.tsx              ← HOLD — do not add to nav until images confirmed
+  /contact
+    page.tsx
+  /faq
+    page.tsx              ← Footer-linked only. NOT in main nav.
+  /privacy-policy
+    page.tsx
+
+/components
+  /layout
+    Header.tsx
+    Footer.tsx
+    MobileNav.tsx
+  /sections
+    Hero.tsx
+    TrustBar.tsx
+    ServicesGrid.tsx
+    ReviewsSection.tsx
+    ServiceAreas.tsx
+    FAQAccordion.tsx
+    CTASection.tsx
+    AwardBadge.tsx
+  /ui
+    Button.tsx
+    ReviewCard.tsx
+    ServiceCard.tsx
+    StatTile.tsx
+
+/lib
+  schema.ts               ← All JSON-LD schema builders
+  metadata.ts             ← Shared metadata helpers
+  constants.ts            ← Site-wide constants (phone, email, suburbs, etc.)
+
+/public
+  llms.txt                ← See Developer Brief for exact content
+  sitemap.xml             ← Auto-generated via next-sitemap
+  robots.txt
+```
+
+---
+
+## BRANDING & DESIGN TOKENS
+
+### Colours
+```css
+/* Use these exact CSS variable names throughout */
+--color-primary:     #E07B20;   /* JC Brick orange — buttons, accents, section headers */
+--color-primary-dark:#B85F10;   /* Hover state for orange elements */
+--color-secondary:   #6B6B6B;   /* Grey — secondary text, dividers */
+--color-dark:        #1A1A1A;   /* Near-black — headings, body text */
+--color-light:       #F5F5F5;   /* Off-white — alternating section backgrounds */
+--color-white:       #FFFFFF;
+--color-accent:      #000000;   /* Black — trust bar, footer */
+```
+
+In Tailwind config, extend with:
+```js
+colors: {
+  brand: {
+    orange:      '#E07B20',
+    'orange-dark':'#B85F10',
+    grey:        '#6B6B6B',
+    dark:        '#1A1A1A',
+    light:       '#F5F5F5',
+  }
+}
+```
+
+### Typography
+- **Display / Headings**: `Barlow Condensed` (Bold 700, SemiBold 600) — strong, trade-appropriate, masculine without being aggressive. Pairs well with the orange brand colour.
+- **Body**: `DM Sans` (Regular 400, Medium 500) — clean, highly legible on mobile, friendly without being soft.
+- Load both via `next/font/google`. Never use Inter, Roboto, or Arial.
+- H1: `text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight` (Barlow Condensed)
+- H2: `text-2xl md:text-3xl font-semibold` (Barlow Condensed)
+- H3: `text-xl font-semibold` (Barlow Condensed)
+- Body: `text-base leading-relaxed` (DM Sans)
+- Trust/micro copy: `text-sm font-medium` (DM Sans)
+
+### Spacing
+- Section vertical padding: `py-16 md:py-24`
+- Container max width: `max-w-6xl mx-auto px-4 sm:px-6 lg:px-8`
+- Card internal padding: `p-6 md:p-8`
+
+### Design Aesthetic
+- Dark hero sections (dark background, white text, orange CTA) alternating with light sections (off-white background)
+- Orange used sparingly — CTAs, active states, section accents, stat highlights
+- No gradients on the orange — solid fills only
+- Subtle texture on dark sections: a faint noise/grain overlay at 3–5% opacity gives depth without looking designed
+- Brick-pattern SVG motif (subtle, low-opacity) permitted as background texture on the hero only — must not distract from the headline
+- Photography-first design — hero and service sections should be built to showcase Jamie's work photos prominently
+- Mobile-first always — design for 390px width first, scale up
+
+---
+
+## SEO — MANDATORY RULES
+
+### Metadata — Every Page
+Every page must export a `generateMetadata()` function or static `metadata` object using Next.js App Router conventions.
+
+```tsx
+// Example — adapt per page using exact values from /lib/metadata.ts
+export const metadata: Metadata = {
+  title: 'Bricklayer Melbourne | JC Brick & Blocklaying',
+  description: 'Award-winning bricklayer across Melbourne\'s east. Fireplaces, retaining walls & heritage restoration. 21 yrs exp. 5★ rated. Free quotes.',
+  alternates: { canonical: 'https://jcbricklaying.com.au' },
+  openGraph: {
+    title: 'Bricklayer Melbourne | JC Brick & Blocklaying',
+    description: 'Award-winning bricklayer across Melbourne\'s east. Fireplaces, retaining walls & heritage restoration. 21 yrs exp. 5★ rated. Free quotes.',
+    url: 'https://jcbricklaying.com.au',
+    type: 'website',
+    images: [{ url: '/images/og/homepage.jpg', width: 1200, height: 630 }],
+  },
+}
+```
+
+### Title Tags — Per Page (exact — do not alter)
+| Page | Title Tag |
+|---|---|
+| Home | `Bricklayer Melbourne \| JC Brick & Blocklaying` |
+| About | `About JC Brick & Blocklaying \| Bricklayer Melbourne` |
+| Services Hub | `Bricklaying Services Melbourne \| JC Brick & Blocklaying` |
+| Outdoor Fireplaces | `Outdoor Fireplaces Melbourne \| JC Brick & Blocklaying` |
+| Block Retaining Walls | `Block Retaining Walls Melbourne \| JC Brick & Blocklaying` |
+| Remedial Brickwork | `Remedial Brickwork Melbourne \| JC Brick & Blocklaying` |
+| Custom Mortar Matching | `Custom Mortar Matching Melbourne \| JC Brick & Blocklaying` |
+| New Builds & Architectural Brickwork | `New Builds & Architectural Brickwork Melbourne \| JC Brick & Blocklaying` |
+| Gallery | `Our Work \| JC Brick & Blocklaying \| Bricklayer Melbourne` |
+| Contact | `Get a Free Quote \| JC Brick & Blocklaying \| Melbourne` |
+| FAQ | `FAQs \| JC Brick & Blocklaying \| Bricklayer Melbourne` |
+
+### Headings — Do Not Alter Copy Writer's H1/H2/H3 Text
+The copy writer has written every heading exactly as it must appear. Implement headings from the Copy Delivery Template Part C verbatim. Do not restyle body copy as headings and do not paraphrase heading text in the CMS or component props.
+
+- One `<h1>` per page — no exceptions
+- Never skip heading levels (H1 → H3 without H2 is a failure)
+- H1 rendered as semantic `<h1>`, not as a styled `<div>` or `<p>`
+
+### Images — next/image Required
+```tsx
+// Every image — no exceptions
+<Image
+  src="/images/hero.webp"
+  alt="bricklayer melbourne eastern suburbs — jc brick and blocklaying"
+  width={1920}
+  height={1080}
+  priority={true}         // hero image only
+  className="..."
+/>
+```
+- All images converted to WebP before being placed in `/public/images/`
+- Hero image: `priority={true}` — critical for LCP score
+- All below-fold images: `loading="lazy"` (Next.js default)
+- Alt text must be used exactly as supplied in Copy Delivery Template Part D — do not write your own alt text
+- Image dimensions must be set — no layout shift
+
+### Canonical URLs
+Every page must set its canonical URL. Use the `alternates.canonical` field in metadata. See exact canonical URLs in Copy Delivery Template Part B.
+
+---
+
+## SCHEMA — JSON-LD IMPLEMENTATION
+
+All schema is injected as `<script type="application/ld+json">` tags in the `<head>` via Next.js metadata or a `JsonLd` component. Never inline schema in the body. All schema values are pre-built in the Developer Brief — copy exactly, do not recalculate.
+
+### Schema types required per page:
+
+| Page | Schema Types |
+|---|---|
+| All pages (root layout) | `LocalBusiness`, `Organization` |
+| Home | `AggregateRating`, `Review` (×3) |
+| All service pages | `FAQPage` |
+| FAQ page | `FAQPage` |
+| All pages except Home | `BreadcrumbList` |
+
+### JsonLd Component Pattern
+```tsx
+// /components/JsonLd.tsx
+export function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+```
+Use in `<head>` via layout or page metadata slot — never in `<body>`.
+
+---
+
+## CONVERSION — MANDATORY RULES
+
+### Click-to-Call
+The phone number must be clickable on every page at all times on mobile.
+
+```tsx
+// Sticky mobile CTA — present on every page via layout
+<a
+  href="tel:+61402723175"
+  className="fixed bottom-4 right-4 z-50 md:hidden bg-brand-orange text-white px-5 py-3 rounded-full font-semibold shadow-lg"
+>
+  Call Jamie
+</a>
+```
+
+### Primary CTA — Wording is Non-Negotiable
+- Primary: `Get My Free Quote` or `Request a Free Quote`
+- Secondary: `Call Jamie` (links to `tel:+61402723175`)
+- Form submit: `Get My Free Quote` or `Send My Quote Request`
+- Never: `Submit`, `Contact Us` as standalone CTA, `Click Here`
+
+### Lead Capture Form
+Form field labels, placeholder text, dropdown options, submit button wording, response note, and confirmation message are all specified in Copy Delivery Template Part J and Page 9 (Contact) copy. Implement exactly as written. Do not add, remove, or relabel fields without copy writer sign-off.
+
+The form must:
+- Be a Server Action or API route — no client-side form submission to external services without approval
+- Integrate with the BPC CRM (GoHighLevel) — implementation details to be confirmed with Sara
+- Show inline validation messages per Copy Delivery Template field-level specs
+- Display the confirmation message after successful submission (not a redirect)
+
+### CRM Phone Number
+The CRM lead gen number is not yet provisioned. The current personal mobile `0402 723 175` is used as a temporary placeholder in all click-to-call and tel: links. When the CRM number is confirmed by BPC, do a global find-and-replace — it appears in: Header, Footer, Hero, Contact page, sticky mobile CTA, and LocalBusiness schema.
+
+---
+
+## NAVIGATION
+
+### Main Nav (desktop + mobile)
+```
+Home | About | Services ▾ | Gallery | Contact
+```
+
+Services dropdown:
+```
+Outdoor Fireplaces
+Block Retaining & Dividing Walls
+Remedial Brickwork & Crack Stitching
+Custom Mortar Matching
+New Builds & Architectural Brickwork
+→ View All Services
+```
+
+### Footer Nav
+```
+Home | About | Services | Gallery | Contact | FAQ | Privacy Policy
+```
+
+### Rules
+- **Gallery**: Include in nav but mark as `coming soon` or hold from nav entirely until minimum 6 images are supplied and approved by Sara. Do not launch with an empty gallery page.
+- **FAQ page**: Footer-linked only. Never in the main nav. Route: `/faq`
+- **Privacy Policy**: Footer only. Route: `/privacy-policy`
+- Active page state on nav links — use `usePathname()` in a client component wrapper
+
+---
+
+## ACCESSIBILITY — WCAG 2.1 AA
+
+- Every form field: visible `<label>` above the input — placeholder text is not a substitute
+- All interactive elements keyboard-accessible — visible focus ring on tab
+- Tab order follows logical visual order
+- All modals, accordions (FAQ), dropdowns: keyboard accessible, ARIA roles applied
+- Colour contrast: white text on `#E07B20` orange passes AA — verify with contrast checker
+- `aria-label` on icon-only buttons (e.g. mobile menu toggle)
+- Skip-to-content link as first element in `<body>`:
+```tsx
+<a href="#main-content" className="sr-only focus:not-sr-only">
+  Skip to main content
+</a>
+```
+
+---
+
+## PERFORMANCE — CORE WEB VITALS TARGETS
+
+| Metric | Target | Key Rules |
+|---|---|---|
+| LCP | < 2.5s | Hero image must use `priority={true}`. Preload hero image in `<head>`. |
+| CLS | < 0.1 | All images must have explicit `width` and `height`. Fonts loaded via `next/font`. |
+| INP | < 200ms | Minimise client components. No unnecessary JS on load. |
+
+- Run PageSpeed Insights on mobile before and after launch. Document the score.
+- All images: WebP format, compressed before placement in `/public/images/`
+- No Google Tag Manager or third-party scripts loaded synchronously
+- Any analytics script: load with `strategy="afterInteractive"` via `next/script`
+
+---
+
+## COPY FIDELITY — CRITICAL
+
+The copy writer (Sara LiDonni, Bright Path Creative) has written all page copy, headings, metadata, schema values, FAQ answers, review text, footer copy, and llms.txt content. This copy has been:
+- SEO-optimised with specific keyword placement
+- Written to comply with the BPC Brand Voice Guide (Friendly & Approachable)
+- Checked against the BPC Local SEO Checklist
+- Checked against the BPC Technical SEO Standards
+
+**Do not:**
+- Rewrite, paraphrase, or "improve" any copy
+- Shorten headings for design purposes
+- Change CTA wording
+- Add, remove, or reorder FAQ questions
+- Edit review text (reviews must be verbatim from Google)
+- Alter suburb names or lists
+- Change the H1 on any page
+
+If copy seems awkward in a layout, adjust the design — not the copy. Flag any genuine layout conflict to Sara before making a copy change.
+
+---
+
+## SITEMAP & ROBOTS
+
+### Sitemap — include these pages
+```
+https://jcbricklaying.com.au
+https://jcbricklaying.com.au/about
+https://jcbricklaying.com.au/services
+https://jcbricklaying.com.au/services/outdoor-fireplaces
+https://jcbricklaying.com.au/services/block-retaining-walls
+https://jcbricklaying.com.au/services/remedial-brickwork
+https://jcbricklaying.com.au/services/custom-mortar-matching
+https://jcbricklaying.com.au/contact
+https://jcbricklaying.com.au/faq
+https://jcbricklaying.com.au/privacy-policy
+```
+
+### Sitemap — exclude these pages
+```
+/gallery        ← hold until images confirmed
+/thank-you
+/api/*
+```
+
+Use `next-sitemap` package. Configure in `next-sitemap.config.js`.
+
+### robots.txt
+```
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://jcbricklaying.com.au/sitemap.xml
+```
+
+---
+
+## LLMS.TXT
+
+File location: `/public/llms.txt`
+Content is pre-written in the Copy Delivery Template Part E. Copy exactly as written. The build team does not edit this content.
+
+---
+
+## PRE-LAUNCH CHECKLIST FOR DEVELOPER
+
+Before submitting site for client review:
+
+- [ ] All title tags match Part B of Copy Delivery Template exactly
+- [ ] All meta descriptions match Part B exactly
+- [ ] All OG tags implemented (title, description, image 1200×630, type, url)
+- [ ] All canonical URLs set
+- [ ] One H1 per page — confirmed
+- [ ] Heading levels never skip (H1 → H2 → H3 only)
+- [ ] All alt tags match Part D exactly
+- [ ] LocalBusiness JSON-LD in root layout — values from Part G
+- [ ] AggregateRating schema on Home page
+- [ ] Review schema (×3) on Home page — verbatim from Part I
+- [ ] FAQPage schema on every service page and standalone FAQ page
+- [ ] BreadcrumbList schema on all pages except Home
+- [ ] llms.txt live at jcbricklaying.com.au/llms.txt
+- [ ] XML sitemap submitted to Google Search Console
+- [ ] SSL active — all HTTP → HTTPS via 301
+- [ ] Click-to-call working on mobile — sticky floating button
+- [ ] Form submission tested end-to-end — CRM integration confirmed
+- [ ] Missed-call text-back confirmed in CRM
+- [ ] PageSpeed mobile score documented (LCP < 2.5s)
+- [ ] All images WebP, lazy-loaded below fold
+- [ ] Gallery excluded from nav and sitemap until images supplied
+- [ ] FAQ page in footer only — confirmed not in main nav
+- [ ] Privacy Policy live and linked in footer + near all forms
+- [ ] GBP updated post-launch: new domain, new phone number (CRM), email
+- [ ] Award badge displayed in hero or trust section (asset from Jamie — pending)
+- [ ] CRM lead gen number swapped in globally once provisioned
+
+---
+
+*Bright Path Creative — Internal Use Only*
+*Do not share this file outside the BPC development team.*

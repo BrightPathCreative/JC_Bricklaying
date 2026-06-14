@@ -1,0 +1,338 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import {
+  Award,
+  BrickWall,
+  Flame,
+  Palette,
+  Phone,
+  ShieldCheck,
+  Star,
+  Wrench,
+  Home as HomeIcon,
+} from 'lucide-react'
+import { SITE } from '@/lib/constants'
+import { pageMetadata, PAGE_META } from '@/lib/metadata'
+import {
+  aggregateRatingSchema,
+  reviewSchemas,
+  faqPageSchema,
+  type FaqItem,
+} from '@/lib/schema'
+import { JsonLd } from '@/components/JsonLd'
+import { Button } from '@/components/ui/Button'
+import { ServiceCard } from '@/components/ui/ServiceCard'
+import { ReviewCard } from '@/components/ui/ReviewCard'
+import { Reveal } from '@/components/Reveal'
+import { QuoteForm } from '@/components/sections/QuoteForm'
+import { ServiceAreas } from '@/components/sections/ServiceAreas'
+import { FAQAccordion } from '@/components/sections/FAQAccordion'
+import { CTASection } from '@/components/sections/CTASection'
+import { REVIEWS } from '@/lib/constants'
+
+export const metadata: Metadata = pageMetadata({ ...PAGE_META.home, path: '/' })
+
+const STATS = [
+  { value: '21+', label: 'Years Experience' },
+  { value: '5.0★', label: 'Google Rating' },
+  { value: '15', label: 'Google Reviews' },
+  { value: 'Fully', label: 'Insured' },
+]
+
+const HOME_SERVICES = [
+  {
+    title: 'Outdoor Fireplaces & Pizza Ovens',
+    href: '/services/outdoor-fireplaces-pizza-ovens',
+    Icon: Flame,
+    description:
+      'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. Jamie builds both to last, with full supply and install, matched to your space.',
+  },
+  {
+    title: 'Block Retaining & Dividing Walls',
+    href: '/services/block-retaining-walls',
+    Icon: BrickWall,
+    description:
+      'Big or small, Jamie builds retaining and dividing walls that hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
+  },
+  {
+    title: 'Remedial Work & Crack Stitching',
+    href: '/services/remedial-brickwork',
+    Icon: Wrench,
+    description:
+      "Cracked brickwork doesn't fix itself. Jamie's remedial work, including specialist crack stitching, addresses the cause, not just the symptom.",
+  },
+  {
+    title: 'Custom Mortar Matching',
+    href: '/services/custom-mortar-matching',
+    Icon: Palette,
+    description:
+      "80 custom mortar colours. If you're restoring heritage brickwork or extending an existing structure, getting the mortar right matters. Jamie has the tools, and the eye, to match it.",
+  },
+  {
+    title: 'New House Brickwork',
+    href: '/services/new-builds-architectural-brickwork',
+    Icon: HomeIcon,
+    description:
+      "Jamie also takes on new house brickwork across Melbourne's east. Every enquiry is assessed on its own merits, so get in touch to discuss your project.",
+  },
+]
+
+const HOME_FAQS: FaqItem[] = [
+  {
+    question: 'Does JC Brick & Blocklaying do outdoor fireplaces?',
+    answer:
+      "Yes. Outdoor fireplaces are one of JC Brick & Blocklaying's most popular services. Jamie Craig builds fully custom outdoor fireplaces and pizza ovens across Melbourne's eastern suburbs, with full supply and install included. Every fireplace is built to last, designed to suit the space, and finished to a high standard. Whether it's a simple freestanding fireplace or a full outdoor entertaining setup, Jamie handles it from start to finish.",
+  },
+  {
+    question: 'What areas does JC Brick & Blocklaying service?',
+    answer:
+      "JC Brick & Blocklaying primarily services Melbourne's eastern and outer-eastern suburbs, including Croydon, Ringwood, Mooroolbark, Doncaster, Blackburn, Chirnside Park, Balwyn, Bayswater, Lilydale, Mount Evelyn, and the Yarra Valley. For a full list of service areas, see the Service Areas section of this website or get in touch to confirm availability for your location.",
+  },
+  {
+    question: 'Is JC Brick & Blocklaying fully insured?',
+    answer:
+      'Yes, JC Brick & Blocklaying is fully insured. Jamie Craig carries comprehensive insurance on every job, giving clients peace of mind whether the project is a residential backyard fireplace or a structural block retaining wall. This is confirmed upfront, along with a clear, itemised quote before any work begins.',
+  },
+  {
+    question: 'How do I get a quote from JC Brick & Blocklaying?',
+    answer:
+      "Getting a quote is straightforward. Fill in the enquiry form on the website or call Jamie directly on 0402 723 175. Jamie responds to all new enquiries within one business day. Once he has the details of your project, he'll provide a clear quote with no hidden costs and no obligation to proceed.",
+  },
+  {
+    question: 'What makes JC Brick & Blocklaying different from other bricklayers in Melbourne?',
+    answer:
+      'A few things stand out. Jamie Craig has 21 years of experience and does all his own work. No subcontracting, no surprises. He offers full supply and install on every job and carries 80 custom mortar colours for exact heritage and restoration matching. He\'s also the only bricklayer in the Maroondah region to be recognised in the top 1% of businesses by the Quality Business Awards 2026.',
+  },
+]
+
+export default function HomePage() {
+  return (
+    <>
+      <JsonLd data={[aggregateRatingSchema, ...reviewSchemas, faqPageSchema(HOME_FAQS)]} />
+
+      {/* HERO */}
+      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+        <div className="container-bpc relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p
+              className="inline-flex animate-[fade-up_800ms_var(--ease-out)_both] items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-medium text-white/90"
+              style={{ animationDelay: '550ms' }}
+            >
+              <Star className="h-4 w-4 fill-brand-orange text-brand-orange" aria-hidden="true" />
+              5.0 ★ (15 Google Reviews) · 🏆 Top 1% Quality Business Awards 2026 · Fully Insured
+            </p>
+            <h1
+              className="mt-5 animate-[fade-up_800ms_var(--ease-out)_both] text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
+              style={{ animationDelay: '200ms' }}
+            >
+              Melbourne&apos;s Trusted Bricklayer. Quality You Can See, Service You&apos;ll Remember.
+            </h1>
+            <p
+              className="mt-5 max-w-xl animate-[fade-up_600ms_var(--ease-out)_both] text-lg text-white/80"
+              style={{ animationDelay: '400ms' }}
+            >
+              21 years of bricklaying across Melbourne&apos;s east. Outdoor fireplaces, retaining
+              walls, heritage restoration, and more. Full supply and install. Free quotes.
+            </p>
+            <div
+              className="mt-8 flex animate-[fade-up_500ms_var(--ease-out)_both] flex-col gap-3 sm:flex-row"
+              style={{ animationDelay: '700ms' }}
+            >
+              <Button href="#quote">Get My Free Quote</Button>
+              <Button href={`tel:${SITE.phoneTel}`} variant="secondary">
+                <Phone className="h-5 w-5" aria-hidden="true" />
+                Call Jamie: {SITE.phone}
+              </Button>
+            </div>
+          </div>
+
+          <div
+            id="quote"
+            className="animate-[fade-up_800ms_var(--ease-out)_both] scroll-mt-24 rounded-2xl bg-white p-6 shadow-2xl md:p-8"
+            style={{ animationDelay: '450ms' }}
+          >
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark">
+              Get My Free Quote
+            </h2>
+            <p className="mt-1 text-sm text-brand-grey">
+              Tell Jamie about your project. No obligation.
+            </p>
+            <div className="mt-5">
+              <QuoteForm tone="light" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="bg-black">
+        <div className="container-bpc py-10">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-display text-4xl font-bold text-brand-orange md:text-5xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-sm font-medium uppercase tracking-wide text-white/70">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm font-medium text-white/80">
+            <Award className="h-5 w-5 text-brand-orange" aria-hidden="true" />
+            Top 1% in the Quality Business Awards 2026 (Maroondah Region)
+          </p>
+        </div>
+      </section>
+
+      {/* ABOUT SNAPSHOT */}
+      <section className="section-pad bg-white">
+        <div className="container-bpc grid items-center gap-12 lg:grid-cols-2">
+          <Reveal className="order-2 lg:order-1">
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+              Bricklaying Done Right Across Melbourne&apos;s Eastern Suburbs
+            </h2>
+            <div className="mt-5 space-y-4 text-brand-grey">
+              <p>
+                Jamie Craig has been laying brick and block since he was 15. That&apos;s 21 years on
+                the tools across Melbourne&apos;s east, from outdoor fireplaces in Chirnside Park to
+                retaining walls in Ringwood, and crack stitching in Doncaster to heritage
+                restoration in Balwyn.
+              </p>
+              <p>
+                Jamie runs a tight crew of qualified tradesmen and apprentices. Full supply and
+                install on every job, plus custom mortar matching that most bricklayers in Melbourne
+                can&apos;t offer. When you call JC Brick &amp; Blocklaying, you get Jamie. Not a
+                quote from a tradie you&apos;ve never met.
+              </p>
+              <p>
+                He&apos;s approachable, straight-talking, and genuinely easy to deal with.
+                That&apos;s what his clients keep saying. And with a 5-star Google rating and a Top
+                1% business award to back it up, it&apos;s not just talk.
+              </p>
+            </div>
+            <div className="mt-7">
+              <Button href="/about" variant="ghost" size="md">
+                More About Jamie
+              </Button>
+            </div>
+          </Reveal>
+          <Reveal delay={80} className="order-1 lg:order-2">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/images/hero/jamie-laying-brick.jpg"
+                alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
+                width={1200}
+                height={1600}
+                className="h-full w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SERVICES OVERVIEW */}
+      <section className="section-pad bg-brand-light">
+        <div className="container-bpc">
+          <Reveal className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+              What JC Brick &amp; Blocklaying Does Best
+            </h2>
+            <p className="mt-4 text-brand-grey">
+              From a custom outdoor fireplace in the Yarra Valley to a structural block retaining
+              wall in Bayswater, Jamie handles it properly, start to finish.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {HOME_SERVICES.map((s, i) => (
+              <Reveal key={s.href} delay={(i % 3) * 80}>
+                <ServiceCard {...s} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AWARD SECTION */}
+      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+        <div className="container-bpc section-pad relative grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr]">
+          <Reveal className="flex justify-center">
+            <Image
+              src="/images/brand/award-badge.jpg"
+              alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
+              width={320}
+              height={320}
+              className="h-auto w-56 rounded-full md:w-64"
+            />
+          </Reveal>
+          <Reveal delay={80}>
+            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+              Recognised as One of Melbourne&apos;s Best
+            </h2>
+            <div className="mt-5 space-y-4 text-white/80">
+              <p>
+                In 2026, JC Brick &amp; Blocklaying was recognised in the top 1% of businesses in the
+                Maroondah region by the Quality Business Awards. It&apos;s not something Jamie went
+                looking for. It&apos;s recognition of what his clients already knew.
+              </p>
+              <p>
+                Hard work. Clean finishes. Someone who turns up on time and does the job properly.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="section-pad bg-white">
+        <div className="container-bpc">
+          <Reveal className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+              What Clients Are Saying
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {REVIEWS.map((r, i) => (
+              <Reveal key={r.author} delay={(i % 3) * 80}>
+                <ReviewCard
+                  author={r.author}
+                  dateLabel={r.dateLabel}
+                  body={r.body}
+                  rating={r.rating}
+                />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <ServiceAreas
+        heading="Bricklaying Across Melbourne's Eastern Suburbs"
+        intro="JC Brick & Blocklaying services homeowners, builders, and architects across Melbourne's eastern and outer-eastern suburbs. Below is our primary coverage area. If you're outside this list, get in touch and Jamie will let you know if he can help."
+      />
+
+      {/* HOME FAQ */}
+      <section className="section-pad bg-white">
+        <div className="container-bpc max-w-4xl">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+              Common Questions About JC Brick &amp; Blocklaying
+            </h2>
+          </Reveal>
+          <Reveal delay={80} className="mt-8">
+            <FAQAccordion items={HOME_FAQS} />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <CTASection
+        heading="Ready to Get Started? Request a Free Quote Today."
+        body="Whether it's a backyard fireplace in Chirnside Park, a retaining wall in Ringwood, or restoration work on a heritage home in Balwyn, Jamie will give you a straight quote and a straight answer."
+      />
+    </>
+  )
+}
