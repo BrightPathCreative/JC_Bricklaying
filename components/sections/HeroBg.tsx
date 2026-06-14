@@ -11,10 +11,13 @@ export function HeroBg({
   src,
   tone = 'dark',
   priority = false,
+  flip = false,
 }: {
   src: string
   tone?: Tone
   priority?: boolean
+  /** Mirror the image horizontally. */
+  flip?: boolean
 }) {
   return (
     <div className="absolute inset-0 -z-10" aria-hidden="true">
@@ -24,7 +27,7 @@ export function HeroBg({
         fill
         priority={priority}
         sizes="100vw"
-        className="h-full w-full object-cover"
+        className={`h-full w-full object-cover${flip ? ' scale-x-[-1]' : ''}`}
       />
       {/* Left scrim — darken only where headline text sits, fade to clear on the right */}
       <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/65 via-brand-dark/25 to-transparent" />

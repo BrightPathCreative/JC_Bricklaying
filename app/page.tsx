@@ -141,7 +141,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
-        <HeroBg src="/images/services/outdoor-fireplaces-pizza-ovens/02.jpg" priority />
+        <HeroBg src="/images/services/outdoor-fireplaces-pizza-ovens/02.jpg" priority flip />
         <div className="container-bpc relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p
@@ -197,47 +197,45 @@ export default function HomePage() {
       </section>
 
       {/* TRUST BAR */}
-      <section className="border-y border-white/10 bg-brand-grey">
-        <div className="container-bpc flex flex-col items-center gap-4 py-5 md:flex-row md:justify-between md:gap-8 md:py-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:gap-x-8">
-            {STATS.map((stat, i) => {
+      <section className="trust-bar">
+        <div className="container-bpc relative z-10 py-5 md:py-6">
+          <div className="grid grid-cols-2 divide-x divide-y divide-brand-grey/10 md:grid-cols-4 md:divide-y-0">
+            {STATS.map((stat) => {
               const inner = (
-                <div className="flex items-baseline gap-2">
-                  <p className="font-display text-2xl font-bold leading-none text-brand-orange md:text-[1.75rem]">
+                <div className="px-3 py-3 text-center md:px-4 md:py-2">
+                  <p className="trust-glow-orange font-display text-base font-bold leading-none text-brand-orange md:text-lg">
                     {stat.value}
                   </p>
-                  <p className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-white/80">
+                  <p className="trust-glow-dark mt-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-brand-dark md:text-[0.6875rem]">
                     {stat.label}
                   </p>
                 </div>
               )
-              return (
-                <div key={stat.label} className="flex items-center gap-5 sm:gap-8">
-                  {i > 0 && (
-                    <span
-                      className="hidden h-5 w-px shrink-0 bg-white/25 sm:block"
-                      aria-hidden="true"
-                    />
-                  )}
-                  {stat.href ? (
-                    <a
-                      href={stat.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-opacity duration-150 hover:opacity-80"
-                    >
-                      {inner}
-                    </a>
-                  ) : (
-                    inner
-                  )}
-                </div>
+              return stat.href ? (
+                <a
+                  key={stat.label}
+                  href={stat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-opacity duration-150 hover:opacity-75"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={stat.label}>{inner}</div>
               )
             })}
           </div>
-          <p className="flex items-center gap-1.5 text-center text-xs font-medium text-white/75 md:shrink-0 md:text-left">
-            <Award className="h-3.5 w-3.5 shrink-0 text-brand-orange" aria-hidden="true" />
-            Top 1% — Quality Business Awards 2026 (Maroondah)
+          <p className="trust-glow-dark mt-4 flex items-center justify-center gap-2 border-t border-brand-grey/15 pt-4 text-center text-[0.6875rem] font-medium leading-snug text-brand-dark md:text-xs">
+            <Award
+              className="trust-glow-orange h-3.5 w-3.5 shrink-0 text-brand-orange"
+              aria-hidden="true"
+            />
+            <span>
+              <span className="trust-glow-orange font-semibold text-brand-orange">Top 1%</span>
+              {' — '}
+              Quality Business Awards 2026 (Maroondah)
+            </span>
           </p>
         </div>
       </section>
