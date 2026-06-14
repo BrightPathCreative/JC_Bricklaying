@@ -10,6 +10,7 @@ import {
   Phone,
   Star,
   Wrench,
+  ExternalLink,
   Home as HomeIcon,
 } from 'lucide-react'
 import { SITE } from '@/lib/constants'
@@ -30,14 +31,17 @@ import { HeroBg } from '@/components/sections/HeroBg'
 import { ServiceAreas } from '@/components/sections/ServiceAreas'
 import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
+import { ProcessSection } from '@/components/sections/ProcessSection'
+import { TrustedOn } from '@/components/sections/TrustedOn'
+import { BrickDivider } from '@/components/sections/BrickDivider'
 import { REVIEWS } from '@/lib/constants'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.home, path: '/' })
 
 const STATS = [
   { value: '21+', label: 'Years Experience' },
-  { value: '5.0★', label: 'Google Rating' },
-  { value: '15', label: 'Google Reviews' },
+  { value: '5.0★', label: 'Google Rating', href: SITE.social.gbp },
+  { value: '15', label: 'Google Reviews', href: SITE.social.gbp },
   { value: 'Fully', label: 'Insured' },
 ]
 
@@ -70,7 +74,8 @@ const HOME_SERVICES = [
     title: 'Custom Mortar Matching',
     href: '/services/custom-mortar-matching',
     Icon: Palette,
-    image: '/images/hero/service-custom-mortar-matching.jpg',
+    image: '/images/services/custom-mortar-matching/12.jpg',
+    imageAlt: 'custom matched mortar on clean brickwork — jc brick and blocklaying melbourne',
     description:
       "80 custom mortar colours. If you're restoring heritage brickwork or extending an existing structure, getting the mortar right matters. Jamie has the tools, and the eye, to match it.",
   },
@@ -86,7 +91,8 @@ const HOME_SERVICES = [
     title: 'Feature Walls & Front Fences',
     href: '/services/feature-walls-front-fences',
     Icon: Fence,
-    image: '/images/hero/service-feature-walls-front-fences.jpg',
+    image: '/images/services/feature-walls-front-fences/04.jpg',
+    imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
     description:
       'From internal feature walls to architectural front fences, Jamie builds statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
   },
@@ -146,10 +152,12 @@ export default function HomePage() {
               5.0 ★ (15 Google Reviews) · 🏆 Top 1% Quality Business Awards 2026 · Fully Insured
             </p>
             <h1
-              className="mt-5 animate-[fade-up_800ms_var(--ease-out)_both] text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
+              className="mt-5 animate-[fade-up_800ms_var(--ease-out)_both] text-5xl font-bold leading-[0.95] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl"
               style={{ animationDelay: '200ms' }}
             >
-              Melbourne&apos;s Trusted Bricklayer. Quality You Can See, Service You&apos;ll Remember.
+              Melbourne&apos;s Trusted Bricklayer.{' '}
+              <span className="text-brand-orange">Quality You Can See</span>, Service You&apos;ll
+              Remember.
             </h1>
             <p
               className="mt-5 max-w-xl animate-[fade-up_600ms_var(--ease-out)_both] text-lg text-white/80"
@@ -192,16 +200,33 @@ export default function HomePage() {
       <section className="bg-black">
         <div className="container-bpc py-10">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-display text-4xl font-bold text-brand-orange md:text-5xl">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm font-medium uppercase tracking-wide text-white/70">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+            {STATS.map((stat) => {
+              const inner = (
+                <>
+                  <p className="font-display text-4xl font-bold text-brand-orange md:text-5xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wide text-white/70">
+                    {stat.label}
+                  </p>
+                </>
+              )
+              return stat.href ? (
+                <a
+                  key={stat.label}
+                  href={stat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg text-center transition-transform duration-200 hover:-translate-y-0.5"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={stat.label} className="text-center">
+                  {inner}
+                </div>
+              )
+            })}
           </div>
           <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm font-medium text-white/80">
             <Award className="h-5 w-5 text-brand-orange" aria-hidden="true" />
@@ -210,11 +235,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BRICK DIVIDER */}
+      <BrickDivider />
+
       {/* ABOUT SNAPSHOT */}
       <section className="section-pad bg-white">
         <div className="container-bpc grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
-            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+            <p className="eyebrow">Melbourne&apos;s East · Since 2004</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
               Bricklaying Done Right Across Melbourne&apos;s Eastern Suburbs
             </h2>
             <div className="mt-5 space-y-4 text-brand-grey">
@@ -257,11 +286,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUSTED ON — credibility strip */}
+      <TrustedOn />
+
       {/* SERVICES OVERVIEW */}
-      <section className="section-pad bg-brand-light">
+      <section className="brick-texture section-pad bg-brand-light">
         <div className="container-bpc">
           <Reveal className="max-w-3xl">
-            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
+            <p className="eyebrow">What We Do</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
               What JC Brick &amp; Blocklaying Does Best
             </h2>
             <p className="mt-4 text-brand-grey">
@@ -278,6 +311,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* HOW JAMIE WORKS */}
+      <ProcessSection />
 
       {/* AWARD SECTION */}
       <section className="grain-overlay relative overflow-hidden bg-brand-dark">
@@ -312,10 +348,23 @@ export default function HomePage() {
       {/* REVIEWS */}
       <section className="section-pad bg-white">
         <div className="container-bpc">
-          <Reveal className="max-w-3xl">
-            <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
-              What Clients Are Saying
-            </h2>
+          <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="eyebrow">5.0 ★ on Google</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
+                What Clients Are Saying
+              </h2>
+            </div>
+            <a
+              href={SITE.social.gbp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-brand-grey/20 bg-white px-5 py-2.5 text-sm font-semibold text-brand-dark shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-orange/40 hover:text-brand-orange hover:shadow-md"
+            >
+              <Star className="h-4 w-4 fill-brand-orange text-brand-orange" aria-hidden="true" />
+              Read all {SITE.rating.count} reviews on Google
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            </a>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {REVIEWS.map((r, i) => (
@@ -329,6 +378,16 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={120} className="mt-8 text-center">
+            <a
+              href={SITE.social.gbp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-brand-orange transition-colors duration-150 hover:text-brand-orange-dark"
+            >
+              See more verified Google reviews →
+            </a>
+          </Reveal>
         </div>
       </section>
 

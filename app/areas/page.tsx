@@ -15,6 +15,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "JC Brick & Blocklaying services Croydon, Ringwood, Doncaster, Balwyn & the wider eastern suburbs of Melbourne. Find your local bricklaying area.",
   path: '/areas',
+  ogImage: '/images/og/areas.jpg',
 })
 
 const crumbs = [{ name: 'Areas We Service', path: '/areas' }]
@@ -30,7 +31,8 @@ export default function AreasPage() {
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <p className="eyebrow">Service Areas</p>
+            <h1 className="mt-3 text-5xl font-bold leading-[0.95] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
               Areas We Service: Bricklayer Across Melbourne&apos;s East
             </h1>
             <p className="mt-5 text-lg text-white/85">

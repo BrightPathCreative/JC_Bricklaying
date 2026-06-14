@@ -49,6 +49,11 @@
     @apply py-16 md:py-24;
   }
 
+  /* Eyebrow label — uppercase, tracked, orange. Sits above section headings. */
+  .eyebrow {
+    @apply font-display text-sm font-semibold uppercase tracking-[0.22em] text-brand-orange;
+  }
+
   /* Subtle noise/grain overlay for dark sections (3–5% opacity) */
   .grain-overlay::before {
     content: '';
@@ -57,6 +62,23 @@
     pointer-events: none;
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Faint running-bond brick line pattern — adds masonry texture to light
+     sections without competing with content (~3% ink). */
+  .brick-texture {
+    position: relative;
+    isolation: isolate;
+  }
+  .brick-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='60'%3E%3Cg fill='none' stroke='%231a1a1a' stroke-width='1' opacity='0.05'%3E%3Cpath d='M0 0H90M0 30H90M0 60H90'/%3E%3Cpath d='M45 0V30M0 30V60M90 30V60M67.5 30V60M22.5 30V60M0 0V30M90 0V30'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 90px 60px;
   }
 }
 

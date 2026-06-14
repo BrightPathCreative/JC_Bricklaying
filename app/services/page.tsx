@@ -53,7 +53,8 @@ const TILES = [
     title: 'Custom Mortar Matching',
     href: '/services/custom-mortar-matching',
     Icon: Palette,
-    image: '/images/hero/service-custom-mortar-matching.jpg',
+    image: '/images/services/custom-mortar-matching/12.jpg',
+    imageAlt: 'custom matched mortar on clean brickwork — jc brick and blocklaying melbourne',
     description:
       '80 custom mortar colours for an exact match on heritage, restoration, and repair work. On-site sampling before any job, so new brickwork blends seamlessly with old.',
   },
@@ -69,7 +70,8 @@ const TILES = [
     title: 'Feature Walls & Front Fences',
     href: '/services/feature-walls-front-fences',
     Icon: Fence,
-    image: '/images/hero/service-feature-walls-front-fences.jpg',
+    image: '/images/services/feature-walls-front-fences/04.jpg',
+    imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
     description:
       'Custom brick feature walls inside and out, plus front fences from simple rendered block to full architectural brick frontages. Mortar matched to your existing home where needed.',
   },
@@ -102,7 +104,8 @@ export default function ServicesHubPage() {
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <p className="eyebrow">Brick &amp; Block Services</p>
+            <h1 className="mt-3 text-5xl font-bold leading-[0.95] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
               Bricklaying Services Melbourne: Eastern Suburbs
             </h1>
             <p className="mt-5 text-lg text-white/80">

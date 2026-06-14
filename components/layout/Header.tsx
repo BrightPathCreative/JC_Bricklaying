@@ -20,6 +20,15 @@ export function Header() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Elevate + condense the header once the page is scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Close menus on route change
   useEffect(() => {
@@ -39,16 +48,28 @@ export function Header() {
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-brand-grey/15 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="container-bpc flex h-20 items-center justify-between gap-4 md:h-28">
+    <header
+      className={`sticky top-0 z-40 border-b backdrop-blur transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] supports-[backdrop-filter]:bg-white/80 ${
+        scrolled
+          ? 'border-brand-grey/15 bg-white/95 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.18)]'
+          : 'border-transparent bg-white/90'
+      }`}
+    >
+      <div
+        className={`container-bpc flex items-center justify-between gap-4 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          scrolled ? 'h-16 md:h-20' : 'h-20 md:h-28'
+        }`}
+      >
         <Link href="/" className="flex shrink-0 items-center" aria-label="JC Brick & Blocklaying home">
           <Image
             src="/images/brand/logo.png"
             alt="jc brick and blocklaying logo — bricklayer melbourne eastern suburbs"
-            width={600}
-            height={400}
+            width={906}
+            height={723}
             priority
-            className="h-16 w-auto md:h-24"
+            className={`w-auto transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              scrolled ? 'h-12 md:h-16' : 'h-16 md:h-24'
+            }`}
           />
         </Link>
 

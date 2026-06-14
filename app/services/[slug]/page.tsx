@@ -55,7 +55,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-12">
           <Reveal className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <p className="eyebrow">{meta.breadcrumb}</p>
+            <h1 className="mt-3 text-4xl font-bold leading-[0.98] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl">
               {content.h1}
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/85">{content.intro}</p>

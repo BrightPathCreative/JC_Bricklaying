@@ -1,10 +1,12 @@
 import { Button } from '@/components/ui/Button'
 import { SITE } from '@/lib/constants'
 import { Phone } from 'lucide-react'
+import { HeroBg } from '@/components/sections/HeroBg'
 
 export default function NotFound() {
   return (
-    <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+    <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+      <HeroBg src="/images/hero/home.jpg" priority />
       <div className="container-bpc relative flex min-h-[70vh] flex-col items-center justify-center py-24 text-center">
         <p className="font-display text-7xl font-bold text-brand-orange md:text-8xl">404</p>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">

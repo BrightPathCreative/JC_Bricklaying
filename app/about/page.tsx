@@ -47,7 +47,8 @@ export default function AboutPage() {
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <p className="eyebrow">Owner · Jamie Craig</p>
+            <h1 className="mt-3 text-5xl font-bold leading-[0.95] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
               About Jamie Craig: Bricklayer Melbourne, Eastern Suburbs
             </h1>
           </Reveal>

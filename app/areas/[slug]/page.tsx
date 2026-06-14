@@ -28,6 +28,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `Bricklayer ${loc.name} | JC Brick & Blocklaying`,
     description: `Fully insured bricklayer in ${loc.name}. Fireplaces, retaining walls, remedial work & heritage restoration. 21 yrs exp. 5★ rated. Free quotes.`,
     path: `/areas/${loc.slug}`,
+    ogImage: '/images/og/areas.jpg',
   })
 }
 
@@ -81,7 +82,7 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
               <Star className="h-4 w-4 fill-brand-orange text-brand-orange" aria-hidden="true" />
               5.0 ★ Google rated · Fully insured · 21 years experience
             </p>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-4xl font-bold leading-[0.98] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl">
               Bricklayer {loc.name}: Quality Brick &amp; Block Work
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/85">{loc.intro}</p>
