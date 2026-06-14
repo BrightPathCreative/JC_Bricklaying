@@ -160,20 +160,24 @@ function RetainingWallShowcaseBlock({ service }: { service: HomeService }) {
   return <RetainingWallShowcase title={title} description={description} href={href} />
 }
 
-const REMEDIAL_IMAGES = {
-  main: {
+const REMEDIAL_IMAGES = [
+  {
     src: '/images/services/remedial-brickwork/04.jpg',
     alt: 'helical bar crack stitching on a brick wall — jc brick and blocklaying melbourne',
   },
-  detail: {
+  {
     src: '/images/services/remedial-brickwork/02.jpg',
     alt: 'stainless steel helical bar installed in mortar joint — jc brick and blocklaying melbourne',
   },
-  process: {
+  {
+    src: '/images/services/remedial-brickwork/05.jpg',
+    alt: 'crack stitch repair on dark grey brickwork — jc brick and blocklaying melbourne',
+  },
+  {
     src: '/images/services/remedial-brickwork/06.jpg',
     alt: 'remedial mortar reinstatement on cracked brickwork — jc brick and blocklaying melbourne',
   },
-} as const
+] as const
 
 function RemedialShowcase({ service }: { service: HomeService }) {
   const { Icon, title, description, href } = service
@@ -183,34 +187,17 @@ function RemedialShowcase({ service }: { service: HomeService }) {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
         <Reveal direction="left" className="relative w-full">
           <div className="flex flex-col gap-5">
-            <div className="relative min-h-[26rem] w-full sm:min-h-[30rem] lg:min-h-[34rem] xl:min-h-[38rem]">
-              <div className="absolute left-0 top-0 z-10 w-[58%] sm:w-[54%]">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {REMEDIAL_IMAGES.map((img) => (
                 <FramedImage
-                  src={REMEDIAL_IMAGES.detail.src}
-                  alt={REMEDIAL_IMAGES.detail.alt}
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
                   fill
-                  sizes="(max-width: 1024px) 55vw, 28vw"
+                  sizes="(max-width: 1024px) 45vw, 22vw"
                   frameClassName="relative aspect-[4/5] rounded-2xl"
                 />
-              </div>
-              <div className="absolute right-0 top-0 z-20 w-[72%] sm:w-[68%]">
-                <FramedImage
-                  src={REMEDIAL_IMAGES.main.src}
-                  alt={REMEDIAL_IMAGES.main.alt}
-                  fill
-                  sizes="(max-width: 1024px) 75vw, 38vw"
-                  frameClassName="relative aspect-[3/4] rounded-2xl sm:aspect-[4/5]"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 z-10 w-[52%] sm:w-[48%]">
-                <FramedImage
-                  src={REMEDIAL_IMAGES.process.src}
-                  alt={REMEDIAL_IMAGES.process.alt}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 26vw"
-                  frameClassName="relative aspect-square rounded-2xl sm:aspect-[5/4]"
-                />
-              </div>
+              ))}
             </div>
 
             <div className="flex w-fit items-center gap-3 rounded-2xl bg-brand-orange px-5 py-4 text-white shadow-lg shadow-brand-orange/25">
