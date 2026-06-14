@@ -141,7 +141,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
-        <HeroBg src="/images/hero/home.jpg" priority />
+        <HeroBg src="/images/services/outdoor-fireplaces-pizza-ovens/02.jpg" priority />
         <div className="container-bpc relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p
@@ -197,40 +197,47 @@ export default function HomePage() {
       </section>
 
       {/* TRUST BAR */}
-      <section className="bg-black">
-        <div className="container-bpc py-10">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {STATS.map((stat) => {
+      <section className="border-y border-white/10 bg-brand-grey">
+        <div className="container-bpc flex flex-col items-center gap-4 py-5 md:flex-row md:justify-between md:gap-8 md:py-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:gap-x-8">
+            {STATS.map((stat, i) => {
               const inner = (
-                <>
-                  <p className="font-display text-4xl font-bold text-brand-orange md:text-5xl">
+                <div className="flex items-baseline gap-2">
+                  <p className="font-display text-2xl font-bold leading-none text-brand-orange md:text-[1.75rem]">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-wide text-white/70">
+                  <p className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-white/80">
                     {stat.label}
                   </p>
-                </>
+                </div>
               )
-              return stat.href ? (
-                <a
-                  key={stat.label}
-                  href={stat.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg text-center transition-transform duration-200 hover:-translate-y-0.5"
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div key={stat.label} className="text-center">
-                  {inner}
+              return (
+                <div key={stat.label} className="flex items-center gap-5 sm:gap-8">
+                  {i > 0 && (
+                    <span
+                      className="hidden h-5 w-px shrink-0 bg-white/25 sm:block"
+                      aria-hidden="true"
+                    />
+                  )}
+                  {stat.href ? (
+                    <a
+                      href={stat.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-opacity duration-150 hover:opacity-80"
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    inner
+                  )}
                 </div>
               )
             })}
           </div>
-          <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm font-medium text-white/80">
-            <Award className="h-5 w-5 text-brand-orange" aria-hidden="true" />
-            Top 1% in the Quality Business Awards 2026 (Maroondah Region)
+          <p className="flex items-center gap-1.5 text-center text-xs font-medium text-white/75 md:shrink-0 md:text-left">
+            <Award className="h-3.5 w-3.5 shrink-0 text-brand-orange" aria-hidden="true" />
+            Top 1% — Quality Business Awards 2026 (Maroondah)
           </p>
         </div>
       </section>

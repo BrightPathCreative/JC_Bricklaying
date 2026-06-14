@@ -60,7 +60,7 @@ function LearnMoreLink({ href }: { href: string }) {
 }
 
 function FireplaceShowcase({ service }: { service: HomeService }) {
-  const { Icon, title, description, href, image } = service
+  const { Icon, title, description, href } = service
 
   return (
     <article className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-brand-grey/10">
@@ -79,8 +79,8 @@ function FireplaceShowcase({ service }: { service: HomeService }) {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl md:aspect-[5/6]">
               <Image
-                src={image}
-                alt={service.imageAlt ?? title}
+                src="/images/services/outdoor-fireplaces-pizza-ovens/10.jpg"
+                alt="custom outdoor brick fireplace — jc brick and blocklaying melbourne"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
