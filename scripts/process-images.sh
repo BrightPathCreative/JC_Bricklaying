@@ -58,7 +58,7 @@ mkdir -p "$OUT/hero"
 first_in() { find "$SRC/$1" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) | sort | sed -n "${2:-1}p"; }
 
 hero_one "$(first_in p07b-new-builds_architectural 3)" "$OUT/hero/home.jpg"
-hero_one "$ROOT/public/images/hero/jamie-laying-brick.jpg" "$OUT/hero/about.jpg"
+hero_one "$(first_in p08b-feature-walls_bluestone 16)" "$OUT/hero/about.jpg"
 hero_one "$(first_in p07b-new-builds_architectural 1)" "$OUT/hero/services.jpg"
 hero_one "$(first_in p04-fireplaces_pizza-ovens 1)" "$OUT/hero/contact.jpg"
 hero_one "$(first_in p08b-feature-walls_bluestone 1)" "$OUT/hero/gallery.jpg"
