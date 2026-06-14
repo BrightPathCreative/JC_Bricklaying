@@ -19,7 +19,7 @@ export function CTASection({ heading, body }: CTASectionProps) {
             <Button href="/contact">Get My Free Quote</Button>
             <Button href={`tel:${SITE.phoneTel}`} variant="secondary">
               <Phone className="h-5 w-5" aria-hidden="true" />
-              Call Jamie: {SITE.phone}
+              {SITE.callLabel}
             </Button>
           </div>
         </Reveal>

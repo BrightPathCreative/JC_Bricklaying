@@ -7,6 +7,7 @@ import { breadcrumbSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
+import { HeroBg } from '@/components/sections/HeroBg'
 import { QuoteForm } from '@/components/sections/QuoteForm'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.contact, path: '/contact' })
@@ -19,7 +20,8 @@ export default function ContactPage() {
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
       {/* HERO */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+      <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+        <HeroBg src="/images/hero/contact.jpg" priority />
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-14 pt-8 md:pb-16 md:pt-10">
           <Reveal className="max-w-3xl">
@@ -62,18 +64,15 @@ export default function ContactPage() {
                 Prefer to Call?
               </h2>
               <p className="mt-3 text-brand-grey">
-                Call Jamie directly on{' '}
-                <a href={`tel:${SITE.phoneTel}`} className="font-medium text-brand-orange">
-                  {SITE.phone}
-                </a>
-                . He&apos;s on-site most days but always calls back.
+                Tap the button below to call Jamie directly. He&apos;s on-site most days but always
+                calls back.
               </p>
               <a
                 href={`tel:${SITE.phoneTel}`}
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 font-medium text-white transition-colors duration-150 hover:bg-brand-orange-dark"
               >
                 <Phone className="h-5 w-5" aria-hidden="true" />
-                Call Jamie: {SITE.phone}
+                {SITE.callLabel}
               </a>
             </div>
 
@@ -104,7 +103,7 @@ export default function ContactPage() {
                 Where We Work
               </h3>
               <p className="mt-4 text-sm text-brand-grey">
-                JC Brick &amp; Blocklaying is based in Mooroolbark and services Melbourne&apos;s
+                JC Brick &amp; Blocklaying is based in Croydon, Melbourne, and services Melbourne&apos;s
                 eastern suburbs, from Blackburn and Doncaster in the north-west through to Healesville
                 and Mount Evelyn in the Yarra Valley.
               </p>

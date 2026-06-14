@@ -4,6 +4,7 @@ import { breadcrumbSchema, faqPageSchema, type FaqItem } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
+import { HeroBg } from '@/components/sections/HeroBg'
 import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
 
@@ -18,7 +19,7 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'Who is JC Brick & Blocklaying and where are they based?',
         answer:
-          "JC Brick & Blocklaying is a masonry and bricklaying business owned and operated by Jamie Craig. Jamie is based in Mooroolbark in Melbourne's eastern suburbs and has been laying brick professionally for 21 years. JC Brick & Blocklaying is a fully insured business recognised in the top 1% of Maroondah businesses by the Quality Business Awards 2026.",
+          "JC Brick & Blocklaying is a masonry and bricklaying business owned and operated by Jamie Craig. Jamie is based in Croydon, Melbourne, in the city's eastern suburbs and has been laying brick professionally for 21 years. JC Brick & Blocklaying is a fully insured business recognised in the top 1% of Maroondah businesses by the Quality Business Awards 2026.",
       },
       {
         question: 'Is JC Brick & Blocklaying fully insured?',
@@ -63,12 +64,12 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'How do I get a quote from JC Brick & Blocklaying?',
         answer:
-          'To request a quote, fill in the enquiry form at jcbricklaying.com.au/contact or call Jamie directly on 0402 723 175. Jamie responds to all new enquiries within one business day. Once the project details are confirmed, a clear and itemised quote will be provided with no hidden costs and no obligation to proceed.',
+          'To request a quote, fill in the enquiry form on the contact page or use the Click-to-Call button to ring Jamie directly. Jamie responds to all new enquiries within one business day. Once the project details are confirmed, a clear and itemised quote will be provided with no hidden costs and no obligation to proceed.',
       },
       {
         question: 'How quickly does JC Brick & Blocklaying respond to enquiries?',
         answer:
-          'JC Brick & Blocklaying responds to all new enquiries within one business day. Jamie Craig reviews every new enquiry personally. For urgent jobs or quick turnaround assessments, calling directly on 0402 723 175 during business hours is the fastest option. JC Brick & Blocklaying operates Monday to Friday, 7:00am to 5:30pm, and Saturday 9:00am to 3:00pm.',
+          'JC Brick & Blocklaying responds to all new enquiries within one business day. Jamie Craig reviews every new enquiry personally. For urgent jobs or quick turnaround assessments, using the Click-to-Call button during business hours is the fastest option. JC Brick & Blocklaying operates Monday to Friday, 7:00am to 5:30pm, and Saturday 9:00am to 3:00pm.',
       },
     ],
   },
@@ -122,7 +123,8 @@ export default function FAQPage() {
       <JsonLd data={[breadcrumbSchema(crumbs), faqPageSchema(ALL_FAQS)]} />
 
       {/* HERO */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+      <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+        <HeroBg src="/images/hero/faq.jpg" priority />
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">
@@ -131,8 +133,8 @@ export default function FAQPage() {
             </h1>
             <p className="mt-5 text-lg text-white/80">
               Got a question about a bricklaying project in Melbourne&apos;s eastern suburbs? Below
-              are the questions Jamie Craig hears most often. If yours isn&apos;t here, call 0402 723
-              175 or use the quote form and Jamie will get back to you within one business day.
+              are the questions Jamie Craig hears most often. If yours isn&apos;t here, use the
+              Click-to-Call button or the quote form and Jamie will get back to you within one business day.
             </p>
           </Reveal>
         </div>
@@ -157,7 +159,7 @@ export default function FAQPage() {
       {/* CTA */}
       <CTASection
         heading="Still Have a Question?"
-        body="Call Jamie on 0402 723 175 or send through a quick enquiry and he'll get back to you within one business day."
+        body="Use the Click-to-Call button or send through a quick enquiry and Jamie will get back to you within one business day."
       />
     </>
   )

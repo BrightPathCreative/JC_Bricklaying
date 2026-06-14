@@ -104,7 +104,7 @@ export const PAGE_META = {
   contact: {
     title: 'Get a Free Quote | JC Brick & Blocklaying | Melbourne',
     description:
-      "Request a free, no-obligation bricklaying quote across Melbourne's eastern suburbs. Jamie responds within 1 business day. Call 0402 723 175.",
+      "Request a free, no-obligation bricklaying quote across Melbourne's eastern suburbs. Jamie responds within 1 business day. Click to call today.",
   },
   faq: {
     title: 'FAQs | JC Brick & Blocklaying | Bricklayer Melbourne',

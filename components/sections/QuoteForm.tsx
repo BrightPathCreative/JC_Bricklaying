@@ -49,9 +49,9 @@ export function QuoteForm({ tone = 'default' }: QuoteFormProps) {
         <CheckCircle2 className="h-12 w-12 text-brand-orange" aria-hidden="true" />
         <p className="mt-4 text-lg font-medium text-brand-dark">{state.message}</p>
         <p className="mt-2 text-sm text-brand-grey">
-          Prefer to talk now? Call Jamie on{' '}
+          Prefer to talk now?{' '}
           <a href="tel:+61402723175" className="font-medium text-brand-orange">
-            0402 723 175
+            Click to Call Jamie
           </a>
           .
         </p>

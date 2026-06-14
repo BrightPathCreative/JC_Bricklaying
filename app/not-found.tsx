@@ -18,7 +18,7 @@ export default function NotFound() {
           <Button href="/">Back to Home</Button>
           <Button href={`tel:${SITE.phoneTel}`} variant="secondary">
             <Phone className="h-5 w-5" aria-hidden="true" />
-            Call Jamie: {SITE.phone}
+            {SITE.callLabel}
           </Button>
         </div>
       </div>

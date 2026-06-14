@@ -74,7 +74,7 @@ export async function submitQuote(
       return {
         status: 'error',
         message:
-          'Sorry, something went wrong sending your enquiry. Please call Jamie on 0402 723 175.',
+          'Sorry, something went wrong sending your enquiry. Please use the Click-to-Call button to reach Jamie directly.',
       }
     }
   } else {

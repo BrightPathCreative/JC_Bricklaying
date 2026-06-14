@@ -12,8 +12,8 @@ const NAV: { label: string; href: string; hasDropdown?: boolean }[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services', hasDropdown: true },
+  { label: 'Areas', href: '/areas' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Contact', href: '/contact' },
 ]
 
 export function Header() {
@@ -40,15 +40,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-brand-grey/15 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="container-bpc flex h-16 items-center justify-between gap-4 md:h-20">
+      <div className="container-bpc flex h-20 items-center justify-between gap-4 md:h-28">
         <Link href="/" className="flex shrink-0 items-center" aria-label="JC Brick & Blocklaying home">
           <Image
             src="/images/brand/logo.png"
             alt="jc brick and blocklaying logo — bricklayer melbourne eastern suburbs"
-            width={200}
-            height={133}
+            width={600}
+            height={400}
             priority
-            className="h-12 w-auto md:h-14"
+            className="h-16 w-auto md:h-24"
           />
         </Link>
 
@@ -127,7 +127,7 @@ export function Header() {
             className="hidden items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-brand-dark transition-colors duration-150 hover:text-brand-orange md:inline-flex"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
-            {SITE.phone}
+            {SITE.callLabel}
           </a>
           <Button href="/contact" size="md" className="hidden sm:inline-flex">
             Get My Free Quote
@@ -170,7 +170,7 @@ export function Header() {
               className="flex items-center justify-center gap-2 bg-brand-orange px-4 py-3.5 font-medium text-white"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
-              Call Jamie: {SITE.phone}
+              {SITE.callLabel}
             </a>
 
             <nav className="flex-1 overflow-y-auto px-2 py-3" aria-label="Mobile">
@@ -203,13 +203,13 @@ export function Header() {
                   </ul>
                 </li>
                 <li>
-                  <Link href="/gallery" className="block rounded-md px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-light">
-                    Gallery
+                  <Link href="/areas" className="block rounded-md px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-light">
+                    Areas We Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="block rounded-md px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-light">
-                    Contact
+                  <Link href="/gallery" className="block rounded-md px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-light">
+                    Gallery
                   </Link>
                 </li>
               </ul>

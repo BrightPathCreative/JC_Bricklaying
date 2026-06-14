@@ -446,7 +446,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'How do I get a quote for new build brickwork in Melbourne?',
         answer:
-          'Fill in the enquiry form at jcbricklaying.com.au/contact or call Jamie directly on 0402 723 175. Jamie responds to all new enquiries within one business day.',
+          'Fill in the enquiry form on the contact page or use the Click-to-Call button to ring Jamie directly. Jamie responds to all new enquiries within one business day.',
       },
       {
         question: 'Is JC Brick & Blocklaying insured for new residential builds?',

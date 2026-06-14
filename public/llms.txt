@@ -1,18 +1,20 @@
 # JC Brick & Blocklaying
 
-JC Brick & Blocklaying is a bricklayer and masonry specialist based in Mooroolbark, serving Melbourne's eastern suburbs.
+JC Brick & Blocklaying is a bricklayer and masonry specialist based in Croydon, Melbourne, Victoria, serving Melbourne's eastern suburbs.
 
 ## Services
 
-- Outdoor Fireplaces & Pizza Ovens: Custom outdoor fireplaces and pizza ovens, full supply and install, across Melbourne's east and Yarra Valley.
-- Block Retaining & Dividing Walls: Structural retaining and dividing walls with concrete core fill and steel reinforcement.
-- Remedial Brickwork & Crack Stitching: Specialist crack stitching, dampcourse rectification, and mortar reinstatement.
-- Custom Mortar Matching: 80 custom mortar colours for exact heritage and restoration matching across Melbourne.
-- Heritage Restoration, Feature Walls, Front Fences, Brick Extensions and Architectural Brickwork.
+- Outdoor Fireplaces & Pizza Ovens: Custom outdoor fireplaces and pizza ovens, full supply and install, across Melbourne's east and Yarra Valley. (/services/outdoor-fireplaces-pizza-ovens)
+- Block Retaining & Dividing Walls: Structural retaining and dividing walls with concrete core fill and steel reinforcement. (/services/block-retaining-walls)
+- Remedial Brickwork & Crack Stitching: Specialist crack stitching, dampcourse rectification, and mortar reinstatement. (/services/remedial-brickwork)
+- Custom Mortar Matching: 80 custom mortar colours for exact heritage and restoration matching across Melbourne. (/services/custom-mortar-matching)
+- Heritage Brickwork Restoration: Facade restoration, crack stitching and dampcourse rectification on period homes. (/services/heritage-brickwork-restoration)
+- Feature Walls & Front Fences: Custom brick feature walls and front fences, simple to architectural. (/services/feature-walls-front-fences)
+- New Builds & Architectural Brickwork: New residential builds and architectural masonry. (/services/new-builds-architectural-brickwork)
 
 ## Service Areas
 
-Croydon, Croydon North, Croydon Hills, Mooroolbark, Mount Evelyn, Ringwood, Ringwood North, Bayswater, Blackburn, Chirnside Park, Doncaster, Balwyn, Kilsyth, Lilydale, Mitcham, Vermont, Wantirna, Healesville, Warranwood, Boronia, Ferntree Gully, Knox, Scoresby
+Croydon, Croydon North, Croydon Hills, Mooroolbark, Mount Evelyn, Ringwood, Ringwood North, Bayswater, Blackburn, Chirnside Park, Doncaster, Balwyn, Kilsyth, Lilydale, Mitcham, Vermont, Wantirna, Healesville, Warranwood, Boronia, Ferntree Gully, Knox, Scoresby. A dedicated page for each area is available at /areas.
 
 ## Credentials
 
@@ -24,6 +26,7 @@ Croydon, Croydon North, Croydon Hills, Mooroolbark, Mount Evelyn, Ringwood, Ring
 
 ## Contact
 
-Phone: 0402 723 175
+Phone: Click-to-Call via the website (number not published)
 Email: jcbrickblocklaying@gmail.com
 Website: https://jcbricklaying.com.au
+Quote form: https://jcbricklaying.com.au/contact

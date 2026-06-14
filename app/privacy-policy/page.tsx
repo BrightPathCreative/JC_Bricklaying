@@ -103,9 +103,9 @@ export default function PrivacyPolicyPage() {
                 <a href={`mailto:${SITE.email}`} className="font-medium text-brand-orange underline">
                   {SITE.email}
                 </a>{' '}
-                or call{' '}
+                or{' '}
                 <a href={`tel:${SITE.phoneTel}`} className="font-medium text-brand-orange underline">
-                  {SITE.phone}
+                  click to call Jamie
                 </a>
                 .
               </p>

@@ -25,6 +25,7 @@ import { ServiceCard } from '@/components/ui/ServiceCard'
 import { ReviewCard } from '@/components/ui/ReviewCard'
 import { Reveal } from '@/components/Reveal'
 import { QuoteForm } from '@/components/sections/QuoteForm'
+import { HeroBg } from '@/components/sections/HeroBg'
 import { ServiceAreas } from '@/components/sections/ServiceAreas'
 import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
@@ -96,7 +97,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     question: 'How do I get a quote from JC Brick & Blocklaying?',
     answer:
-      "Getting a quote is straightforward. Fill in the enquiry form on the website or call Jamie directly on 0402 723 175. Jamie responds to all new enquiries within one business day. Once he has the details of your project, he'll provide a clear quote with no hidden costs and no obligation to proceed.",
+      "Getting a quote is straightforward. Fill in the enquiry form on the website or use the Click-to-Call button to ring Jamie directly. Jamie responds to all new enquiries within one business day. Once he has the details of your project, he'll provide a clear quote with no hidden costs and no obligation to proceed.",
   },
   {
     question: 'What makes JC Brick & Blocklaying different from other bricklayers in Melbourne?',
@@ -111,7 +112,8 @@ export default function HomePage() {
       <JsonLd data={[aggregateRatingSchema, ...reviewSchemas, faqPageSchema(HOME_FAQS)]} />
 
       {/* HERO */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+      <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+        <HeroBg src="/images/hero/home.jpg" priority />
         <div className="container-bpc relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p
@@ -141,7 +143,7 @@ export default function HomePage() {
               <Button href="#quote">Get My Free Quote</Button>
               <Button href={`tel:${SITE.phoneTel}`} variant="secondary">
                 <Phone className="h-5 w-5" aria-hidden="true" />
-                Call Jamie: {SITE.phone}
+                {SITE.callLabel}
               </Button>
             </div>
           </div>

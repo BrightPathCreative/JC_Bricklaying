@@ -15,6 +15,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { ServiceCard } from '@/components/ui/ServiceCard'
 import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
+import { HeroBg } from '@/components/sections/HeroBg'
 import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.services, path: '/services' })
@@ -88,7 +89,8 @@ export default function ServicesHubPage() {
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
       {/* HERO */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+      <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+        <HeroBg src="/images/hero/services.jpg" priority />
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">

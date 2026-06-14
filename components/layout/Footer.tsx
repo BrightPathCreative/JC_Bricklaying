@@ -22,7 +22,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 transition-colors duration-150 hover:text-brand-orange"
                 >
                   <Phone className="h-4 w-4 text-brand-orange" aria-hidden="true" />
-                  {SITE.phone}
+                  {SITE.callLabel}
                 </a>
               </li>
               <li>
@@ -36,10 +36,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" aria-hidden="true" />
-                <span>
-                  {SITE.address.street}, {SITE.address.suburb} {SITE.address.state}{' '}
-                  {SITE.address.postcode}
-                </span>
+                <span>{SITE.address.display}</span>
               </li>
             </ul>
           </div>
@@ -54,8 +51,8 @@ export function Footer() {
                 { label: 'Home', href: '/' },
                 { label: 'About', href: '/about' },
                     { label: 'Services', href: '/services' },
+                    { label: 'Areas We Service', href: '/areas' },
                     { label: 'Gallery', href: '/gallery' },
-                    { label: 'Contact', href: '/contact' },
                     { label: 'FAQ', href: '/faq' },
                 { label: 'Privacy Policy', href: '/privacy-policy' },
               ].map((l) => (

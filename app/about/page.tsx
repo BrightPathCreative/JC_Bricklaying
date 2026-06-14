@@ -6,6 +6,7 @@ import { breadcrumbSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
+import { HeroBg } from '@/components/sections/HeroBg'
 import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.about, path: '/about' })
@@ -41,7 +42,8 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
       {/* HERO */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
+      <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
+        <HeroBg src="/images/hero/about.jpg" priority />
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-10">
           <Reveal className="max-w-3xl">
@@ -68,8 +70,8 @@ export default function AboutPage() {
                 him proud.
               </p>
               <p>
-                He&apos;s based in Mooroolbark and works across Melbourne&apos;s eastern suburbs
-                every day. You&apos;ll find him on-site in Ringwood one morning and Doncaster the
+                He&apos;s based in Croydon, Melbourne, and works across Melbourne&apos;s eastern
+                suburbs every day. You&apos;ll find him on-site in Ringwood one morning and Doncaster the
                 next. He brings a small team of qualified tradesmen and apprentices with him. The
                 work is hands-on, personal, and delivered to a standard that shows.
               </p>

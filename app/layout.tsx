@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyCallButton } from '@/components/layout/StickyCallButton'
+import { BackToTop } from '@/components/layout/BackToTop'
 import { CookieConsent } from '@/components/CookieConsent'
 
 const barlowCondensed = Barlow_Condensed({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Footer />
         <StickyCallButton />
+        <BackToTop />
         <CookieConsent />
       </body>
     </html>

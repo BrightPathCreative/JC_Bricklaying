@@ -3,16 +3,21 @@ export const SITE = {
   shortName: 'JC Brick & Blocklaying',
   owner: 'Jamie Craig',
   abn: '95 667 976 963',
-  phone: '0402 723 175', // Personal mobile — replace with CRM number when provisioned
+  phone: '0402 723 175', // Personal mobile — never displayed; used only for the tel: link
   phoneTel: '+61402723175', // tel: link format
+  /** Visible label used everywhere in place of the raw number. */
+  callLabel: 'Click to Call',
   email: 'jcbrickblocklaying@gmail.com',
   url: 'https://jcbricklaying.com.au',
+  /** Service-area business — based in Croydon, no public street address. */
   address: {
-    street: 'Unit 3/330 Mount Dandenong Road',
     suburb: 'Croydon',
-    state: 'VIC',
-    postcode: '3136',
+    city: 'Melbourne',
+    state: 'Victoria',
+    stateCode: 'VIC',
     country: 'AU',
+    /** Human-readable, privacy-safe location string. */
+    display: 'Croydon, Melbourne, Victoria',
   },
   geo: {
     lat: -37.7942,
@@ -183,11 +188,11 @@ export const ENQUIRY_OPTIONS = [
   'Other',
 ] as const
 
-/** Main navigation (Gallery held until images approved). */
+/** Main navigation. Contact omitted — the "Get My Free Quote" CTA covers it. */
 export const MAIN_NAV = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Areas', href: '/areas' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Contact', href: '/contact' },
 ] as const

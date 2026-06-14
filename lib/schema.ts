@@ -15,10 +15,8 @@ export const localBusinessSchema = {
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: SITE.address.street,
     addressLocality: SITE.address.suburb,
-    addressRegion: SITE.address.state,
-    postalCode: SITE.address.postcode,
+    addressRegion: SITE.address.stateCode,
     addressCountry: SITE.address.country,
   },
   geo: {
