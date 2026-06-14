@@ -3,10 +3,11 @@ import Image from 'next/image'
 import {
   Award,
   BrickWall,
+  Fence,
   Flame,
+  Landmark,
   Palette,
   Phone,
-  ShieldCheck,
   Star,
   Wrench,
   Home as HomeIcon,
@@ -45,6 +46,7 @@ const HOME_SERVICES = [
     title: 'Outdoor Fireplaces & Pizza Ovens',
     href: '/services/outdoor-fireplaces-pizza-ovens',
     Icon: Flame,
+    image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
     description:
       'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. Jamie builds both to last, with full supply and install, matched to your space.',
   },
@@ -52,6 +54,7 @@ const HOME_SERVICES = [
     title: 'Block Retaining & Dividing Walls',
     href: '/services/block-retaining-walls',
     Icon: BrickWall,
+    image: '/images/hero/service-block-retaining-walls.jpg',
     description:
       'Big or small, Jamie builds retaining and dividing walls that hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
   },
@@ -59,6 +62,7 @@ const HOME_SERVICES = [
     title: 'Remedial Work & Crack Stitching',
     href: '/services/remedial-brickwork',
     Icon: Wrench,
+    image: '/images/hero/service-remedial-brickwork.jpg',
     description:
       "Cracked brickwork doesn't fix itself. Jamie's remedial work, including specialist crack stitching, addresses the cause, not just the symptom.",
   },
@@ -66,15 +70,33 @@ const HOME_SERVICES = [
     title: 'Custom Mortar Matching',
     href: '/services/custom-mortar-matching',
     Icon: Palette,
+    image: '/images/hero/service-custom-mortar-matching.jpg',
     description:
       "80 custom mortar colours. If you're restoring heritage brickwork or extending an existing structure, getting the mortar right matters. Jamie has the tools, and the eye, to match it.",
   },
   {
-    title: 'New House Brickwork',
+    title: 'Heritage Brickwork Restoration',
+    href: '/services/heritage-brickwork-restoration',
+    Icon: Landmark,
+    image: '/images/hero/service-heritage-brickwork-restoration.jpg',
+    description:
+      "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, Jamie matches old brickwork so well you can't see the join.",
+  },
+  {
+    title: 'Feature Walls & Front Fences',
+    href: '/services/feature-walls-front-fences',
+    Icon: Fence,
+    image: '/images/hero/service-feature-walls-front-fences.jpg',
+    description:
+      'From internal feature walls to architectural front fences, Jamie builds statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
+  },
+  {
+    title: 'New Builds & Architectural Brickwork',
     href: '/services/new-builds-architectural-brickwork',
     Icon: HomeIcon,
+    image: '/images/hero/service-new-builds-architectural-brickwork.jpg',
     description:
-      "Jamie also takes on new house brickwork across Melbourne's east. Every enquiry is assessed on its own merits, so get in touch to discuss your project.",
+      "Jamie takes on new residential builds and architectural brickwork across Melbourne's east. Every enquiry is assessed on its own merits, so get in touch to discuss your project.",
   },
 ]
 

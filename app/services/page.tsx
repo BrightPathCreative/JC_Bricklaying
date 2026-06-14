@@ -28,6 +28,7 @@ const TILES = [
     title: 'Outdoor Fireplaces & Pizza Ovens',
     href: '/services/outdoor-fireplaces-pizza-ovens',
     Icon: Flame,
+    image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
     description:
       "Custom outdoor fireplaces and pizza ovens built to suit your backyard. Full supply and install. Popular across the Yarra Valley and Melbourne's east.",
   },
@@ -35,6 +36,7 @@ const TILES = [
     title: 'Block Retaining & Dividing Walls',
     href: '/services/block-retaining-walls',
     Icon: BrickWall,
+    image: '/images/hero/service-block-retaining-walls.jpg',
     description:
       "Structural retaining and dividing walls built with concrete core fill and steel reinforcement. Residential and builder projects across Melbourne's eastern suburbs.",
   },
@@ -42,6 +44,7 @@ const TILES = [
     title: 'Remedial Brickwork & Crack Stitching',
     href: '/services/remedial-brickwork',
     Icon: Wrench,
+    image: '/images/hero/service-remedial-brickwork.jpg',
     description:
       'Cracked, damaged, or failing brickwork repaired properly. Specialist crack stitching, dampcourse rectification, and mortar reinstatement.',
   },
@@ -50,6 +53,7 @@ const TILES = [
     title: 'Custom Mortar Matching',
     href: '/services/custom-mortar-matching',
     Icon: Palette,
+    image: '/images/hero/service-custom-mortar-matching.jpg',
     description:
       '80 custom mortar colours for an exact match on heritage, restoration, and repair work. On-site sampling before any job, so new brickwork blends seamlessly with old.',
   },
@@ -57,6 +61,7 @@ const TILES = [
     title: 'Heritage Brickwork Restoration',
     href: '/services/heritage-brickwork-restoration',
     Icon: Landmark,
+    image: '/images/hero/service-heritage-brickwork-restoration.jpg',
     description:
       "Facade restoration, crack stitching, and dampcourse rectification on period homes across Melbourne's eastern and inner suburbs. 80 custom mortar colours for an exact match, every time.",
   },
@@ -64,6 +69,7 @@ const TILES = [
     title: 'Feature Walls & Front Fences',
     href: '/services/feature-walls-front-fences',
     Icon: Fence,
+    image: '/images/hero/service-feature-walls-front-fences.jpg',
     description:
       'Custom brick feature walls inside and out, plus front fences from simple rendered block to full architectural brick frontages. Mortar matched to your existing home where needed.',
   },
@@ -71,6 +77,7 @@ const TILES = [
     title: 'Extensions & Architectural Brickwork',
     href: '/services/new-builds-architectural-brickwork',
     Icon: Building2,
+    image: '/images/hero/service-new-builds-architectural-brickwork.jpg',
     description:
       "Brick extensions and architectural masonry for residential properties. Jamie works directly with homeowners and architects across Melbourne's eastern suburbs.",
   },
@@ -78,6 +85,7 @@ const TILES = [
     title: 'New House Brickwork',
     href: '/services/new-builds-architectural-brickwork',
     Icon: HomeIcon,
+    image: '/images/services/new-builds-architectural-brickwork/05.jpg',
     description:
       "New house brickwork is also available, assessed project by project. If you're building and want a bricklayer who treats it like his own job, get in touch to discuss the details.",
   },
