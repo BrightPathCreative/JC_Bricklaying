@@ -23,7 +23,7 @@ import {
 } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Button } from '@/components/ui/Button'
-import { ServiceCard } from '@/components/ui/ServiceCard'
+import { ServicesShowcase } from '@/components/sections/ServicesShowcase'
 import { ReviewCard } from '@/components/ui/ReviewCard'
 import { Reveal } from '@/components/Reveal'
 import { QuoteForm } from '@/components/sections/QuoteForm'
@@ -287,27 +287,7 @@ export default function HomePage() {
       <TrustedOn />
 
       {/* SERVICES OVERVIEW */}
-      <section className="brick-texture section-pad bg-brand-light">
-        <div className="container-bpc">
-          <Reveal repeat className="max-w-3xl">
-            <p className="eyebrow">What We Do</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
-              What JC Brick &amp; Blocklaying Does Best
-            </h2>
-            <p className="mt-4 text-brand-grey">
-              From a custom outdoor fireplace in the Yarra Valley to a structural block retaining
-              wall in Bayswater, Jamie handles it properly, start to finish.
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {HOME_SERVICES.map((s, i) => (
-              <Reveal key={s.href} direction="zoom" delay={(i % 3) * 90}>
-                <ServiceCard {...s} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesShowcase services={HOME_SERVICES} />
 
       {/* HOW JAMIE WORKS */}
       <ProcessSection />

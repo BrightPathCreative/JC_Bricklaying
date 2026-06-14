@@ -3,9 +3,9 @@ import Image from 'next/image'
 type Tone = 'dark' | 'orange'
 
 /**
- * Full-bleed hero background image with a gradient scrim so white text stays
- * accessible (WCAG AA) over any photo. Drop in as the first child of a
- * `relative isolate overflow-hidden` hero section.
+ * Full-bleed hero background image with a light gradient scrim so white text stays
+ * readable while the brickwork photo remains visible. Drop in as the first child
+ * of a `relative isolate overflow-hidden` hero section.
  */
 export function HeroBg({
   src,
@@ -26,12 +26,12 @@ export function HeroBg({
         sizes="100vw"
         className="h-full w-full object-cover"
       />
-      {/* Left-to-right scrim keeps headline text readable */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/45" />
-      {/* Vertical scrim for depth + bottom edge */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-brand-dark/60" />
+      {/* Left scrim — darken only where headline text sits, fade to clear on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/65 via-brand-dark/25 to-transparent" />
+      {/* Soft bottom edge — keeps text readable without washing the whole image */}
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/35 via-transparent to-transparent" />
       {tone === 'orange' && (
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/15 via-transparent to-transparent" />
       )}
     </div>
   )
