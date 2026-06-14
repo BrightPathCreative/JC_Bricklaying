@@ -5,6 +5,7 @@ import { pageMetadata, PAGE_META } from '@/lib/metadata'
 import { breadcrumbSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Reveal } from '@/components/Reveal'
+import { Parallax } from '@/components/Parallax'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
 import { HeroBg } from '@/components/sections/HeroBg'
 import { CTASection } from '@/components/sections/CTASection'
@@ -58,7 +59,7 @@ export default function AboutPage() {
       {/* MAIN STORY */}
       <section className="section-pad bg-white">
         <div className="container-bpc grid items-center gap-12 lg:grid-cols-2">
-          <Reveal>
+          <Reveal direction="left" repeat>
             <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
               21 Years on the Tools. Every Job Done by Hand.
             </h2>
@@ -78,16 +79,18 @@ export default function AboutPage() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal direction="right" repeat delay={80}>
             <div className="overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src="/images/hero/jamie-laying-brick.jpg"
-                alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
-                width={1200}
-                height={1600}
-                className="h-full w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <Parallax speed={0.08}>
+                <Image
+                  src="/images/hero/jamie-laying-brick.jpg"
+                  alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
+                  width={1200}
+                  height={1600}
+                  className="h-full w-full scale-110 object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </Parallax>
             </div>
           </Reveal>
         </div>
@@ -96,16 +99,18 @@ export default function AboutPage() {
       {/* AWARD SECTION */}
       <section className="grain-overlay relative overflow-hidden bg-brand-dark">
         <div className="container-bpc section-pad relative grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr]">
-          <Reveal className="flex justify-center">
-            <Image
-              src="/images/brand/award-badge.jpg"
-              alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
-              width={320}
-              height={320}
-              className="h-auto w-56 rounded-full md:w-64"
-            />
+          <Reveal direction="zoom" repeat className="flex justify-center">
+            <Parallax speed={0.1}>
+              <Image
+                src="/images/brand/award-badge.jpg"
+                alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
+                width={320}
+                height={320}
+                className="h-auto w-56 rounded-full md:w-64"
+              />
+            </Parallax>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal direction="right" repeat delay={80}>
             <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
               Award-Winning Bricklaying in Melbourne&apos;s East
             </h2>

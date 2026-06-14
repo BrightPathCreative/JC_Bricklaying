@@ -33,7 +33,7 @@ import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { TrustedOn } from '@/components/sections/TrustedOn'
-import { BrickDivider } from '@/components/sections/BrickDivider'
+import { Parallax } from '@/components/Parallax'
 import { REVIEWS } from '@/lib/constants'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.home, path: '/' })
@@ -235,13 +235,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BRICK DIVIDER */}
-      <BrickDivider />
-
       {/* ABOUT SNAPSHOT */}
       <section className="section-pad bg-white">
         <div className="container-bpc grid items-center gap-12 lg:grid-cols-2">
-          <Reveal className="order-2 lg:order-1">
+          <Reveal direction="left" repeat className="order-2 lg:order-1">
             <p className="eyebrow">Melbourne&apos;s East · Since 2004</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
               Bricklaying Done Right Across Melbourne&apos;s Eastern Suburbs
@@ -274,10 +271,10 @@ export default function HomePage() {
           <Reveal delay={80} className="order-1 lg:order-2">
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <Image
-                src="/images/hero/jamie-laying-brick.jpg"
-                alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
-                width={1200}
-                height={1600}
+                src="/images/gallery/heritage-36.jpg"
+                alt="jamie craig laying heritage brickwork on site — jc brick and blocklaying melbourne"
+                width={1050}
+                height={1400}
                 className="h-full w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -292,7 +289,7 @@ export default function HomePage() {
       {/* SERVICES OVERVIEW */}
       <section className="brick-texture section-pad bg-brand-light">
         <div className="container-bpc">
-          <Reveal className="max-w-3xl">
+          <Reveal repeat className="max-w-3xl">
             <p className="eyebrow">What We Do</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
               What JC Brick &amp; Blocklaying Does Best
@@ -304,7 +301,7 @@ export default function HomePage() {
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {HOME_SERVICES.map((s, i) => (
-              <Reveal key={s.href} delay={(i % 3) * 80}>
+              <Reveal key={s.href} direction="zoom" delay={(i % 3) * 90}>
                 <ServiceCard {...s} />
               </Reveal>
             ))}
@@ -318,16 +315,18 @@ export default function HomePage() {
       {/* AWARD SECTION */}
       <section className="grain-overlay relative overflow-hidden bg-brand-dark">
         <div className="container-bpc section-pad relative grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr]">
-          <Reveal className="flex justify-center">
-            <Image
-              src="/images/brand/award-badge.jpg"
-              alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
-              width={320}
-              height={320}
-              className="h-auto w-56 rounded-full md:w-64"
-            />
+          <Reveal direction="zoom" repeat className="flex justify-center">
+            <Parallax speed={0.1}>
+              <Image
+                src="/images/brand/award-badge.jpg"
+                alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
+                width={320}
+                height={320}
+                className="h-auto w-56 rounded-full md:w-64"
+              />
+            </Parallax>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal direction="right" repeat delay={80}>
             <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
               Recognised as One of Melbourne&apos;s Best
             </h2>
@@ -348,7 +347,7 @@ export default function HomePage() {
       {/* REVIEWS */}
       <section className="section-pad bg-white">
         <div className="container-bpc">
-          <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <Reveal repeat className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <p className="eyebrow">5.0 ★ on Google</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-dark md:text-4xl">
