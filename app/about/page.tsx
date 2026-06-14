@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { FramedImage } from '@/components/ui/FramedImage'
 import { HardHat, Handshake, Layers, Palette } from 'lucide-react'
 import { pageMetadata, PAGE_META } from '@/lib/metadata'
 import { breadcrumbSchema } from '@/lib/schema'
@@ -80,18 +80,17 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal direction="right" repeat delay={80}>
-            <div className="overflow-hidden rounded-2xl shadow-xl">
-              <Parallax speed={0.08}>
-                <Image
-                  src="/images/hero/jamie-laying-brick.jpg"
-                  alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
-                  width={1200}
-                  height={1600}
-                  className="h-full w-full scale-110 object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </Parallax>
-            </div>
+            <Parallax speed={0.08}>
+              <FramedImage
+                src="/images/hero/jamie-laying-brick.jpg"
+                alt="jamie craig bricklayer — on site mooroolbark jc brick and blocklaying"
+                width={1200}
+                height={1600}
+                frameClassName="overflow-hidden rounded-2xl"
+                className="h-full w-full scale-110"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </Parallax>
           </Reveal>
         </div>
       </section>
@@ -101,12 +100,14 @@ export default function AboutPage() {
         <div className="container-bpc section-pad relative grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr]">
           <Reveal direction="zoom" repeat className="flex justify-center">
             <Parallax speed={0.1}>
-              <Image
+              <FramedImage
                 src="/images/brand/award-badge.jpg"
                 alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
                 width={320}
                 height={320}
-                className="h-auto w-56 rounded-full md:w-64"
+                frameClassName="rounded-full"
+                border="orange"
+                className="h-auto w-56 object-contain md:w-64"
               />
             </Parallax>
           </Reveal>

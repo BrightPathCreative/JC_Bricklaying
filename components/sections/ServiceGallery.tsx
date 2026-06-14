@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import Image from 'next/image'
+import { FramedImage } from '@/components/ui/FramedImage'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import type { GalleryItem } from '@/lib/service-gallery'
 
@@ -44,17 +44,18 @@ export function ServiceGallery({ images }: { images: GalleryItem[] }) {
             key={img.src}
             type="button"
             onClick={() => setLightbox(i)}
-            className="group block w-full overflow-hidden rounded-xl bg-brand-light shadow-sm transition-shadow duration-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
+            className="group block w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2"
             aria-label={`View larger: ${img.alt}`}
           >
-            <Image
+            <FramedImage
               src={img.src}
               alt={img.alt}
               width={1000}
               height={1000}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               loading="lazy"
-              className="h-auto w-full object-cover transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+              frameClassName="rounded-xl"
+              className="h-auto w-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
             />
           </button>
         ))}
@@ -99,13 +100,15 @@ export function ServiceGallery({ images }: { images: GalleryItem[] }) {
             <ChevronRight className="h-7 w-7" aria-hidden="true" />
           </button>
           <figure className="relative max-h-[85vh] w-auto max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <Image
+            <FramedImage
               src={current.src}
               alt={current.alt}
               width={1400}
               height={1400}
               sizes="90vw"
-              className="max-h-[85vh] w-auto rounded-lg object-contain"
+              frameClassName="rounded-lg"
+              border="orange"
+              className="max-h-[85vh] w-auto object-contain"
               priority
             />
             <figcaption className="mt-3 text-center text-sm text-white/70">

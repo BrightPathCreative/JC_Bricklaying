@@ -1,16 +1,15 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import {
   ArrowRight,
   ShieldCheck,
-  Truck,
   Wrench,
   type LucideIcon,
 } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { Button } from '@/components/ui/Button'
-import { ServiceCard } from '@/components/ui/ServiceCard'
-import { RetainingWallTabs } from '@/components/sections/RetainingWallTabs'
+import { FramedImage } from '@/components/ui/FramedImage'
+import { ServiceStoryCard } from '@/components/ui/ServiceStoryCard'
+import { RetainingWallShowcase } from '@/components/sections/RetainingWallShowcase'
 
 export interface HomeService {
   title: string
@@ -63,8 +62,8 @@ function FireplaceShowcase({ service }: { service: HomeService }) {
   const { Icon, title, description, href } = service
 
   return (
-    <article className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-brand-grey/10">
-      <div className="grid items-center gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
+    <article>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal direction="left" className="relative">
           {/* decorative dot grid */}
           <div
@@ -77,25 +76,21 @@ function FireplaceShowcase({ service }: { service: HomeService }) {
           </div>
 
           <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl md:aspect-[5/6]">
-              <Image
-                src="/images/services/outdoor-fireplaces-pizza-ovens/10.jpg"
-                alt="custom outdoor brick fireplace — jc brick and blocklaying melbourne"
+            <FramedImage
+              src="/images/services/outdoor-fireplaces-pizza-ovens/10.jpg"
+              alt="custom outdoor brick fireplace — jc brick and blocklaying melbourne"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              frameClassName="relative aspect-[4/5] rounded-2xl md:aspect-[5/6]"
+            />
+            <div className="absolute -bottom-6 -right-4 z-10 w-[42%] md:-bottom-8 md:-right-8">
+              <FramedImage
+                src="/images/services/outdoor-fireplaces-pizza-ovens/08.jpg"
+                alt="wood-fired brick pizza oven — jc brick and blocklaying melbourne"
                 fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
+                sizes="200px"
+                frameClassName="relative aspect-square rounded-xl"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-4 w-[42%] overflow-hidden rounded-xl border-4 border-white shadow-xl md:-bottom-8 md:-right-8">
-              <div className="relative aspect-square">
-                <Image
-                  src="/images/services/outdoor-fireplaces-pizza-ovens/08.jpg"
-                  alt="wood-fired brick pizza oven — jc brick and blocklaying melbourne"
-                  fill
-                  sizes="200px"
-                  className="object-cover"
-                />
-              </div>
             </div>
           </div>
 
@@ -141,7 +136,7 @@ function FireplaceShowcase({ service }: { service: HomeService }) {
         </Reveal>
       </div>
 
-      <div className="grid border-t border-brand-grey/10 bg-brand-light/60 sm:grid-cols-3">
+      <div className="mt-10 grid border-t border-brand-grey/15 pt-8 sm:grid-cols-3 md:pt-10">
         {FIREPLACE_STATS.map((stat, i) => (
           <Reveal key={stat.label} delay={i * 60} className="px-6 py-6 md:px-10 md:py-7">
             <div className="flex items-start gap-4">
@@ -160,123 +155,65 @@ function FireplaceShowcase({ service }: { service: HomeService }) {
   )
 }
 
-function RetainingWallShowcase({ service }: { service: HomeService }) {
-  const { Icon, title, description, href, image } = service
-
-  return (
-    <article className="relative overflow-hidden rounded-3xl bg-brand-dark">
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-orange/10 blur-3xl"
-        aria-hidden="true"
-      />
-      <div className="grid items-center gap-10 p-6 md:p-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:p-12">
-        <Reveal direction="left" className="relative z-10">
-          <p className="eyebrow text-brand-orange">Structural Masonry</p>
-          <div className="mt-4 flex items-start gap-4">
-            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange">
-              <Icon className="h-5 w-5" aria-hidden="true" />
-            </span>
-            <h3 className="text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
-              {title}
-            </h3>
-          </div>
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/75">{description}</p>
-          <div className="mt-8 rounded-2xl bg-white p-6 shadow-xl md:p-8">
-            <RetainingWallTabs />
-          </div>
-          <div className="mt-8 flex flex-wrap items-center gap-5">
-            <Button href={href} size="md">
-              View Retaining Walls
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-            <Link
-              href={href}
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition-colors hover:text-brand-orange"
-            >
-              Learn more
-              <ArrowRight
-                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
-        </Reveal>
-
-        <Reveal direction="right" delay={100} className="relative">
-          <div className="relative">
-            <div
-              className="absolute -inset-3 rounded-[1.75rem] border-2 border-brand-orange/30"
-              aria-hidden="true"
-            />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl md:aspect-[5/6]">
-              <Image
-                src={image}
-                alt={service.imageAlt ?? title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
-                priority={false}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent" />
-            </div>
-            <div className="absolute bottom-6 left-6 flex items-center gap-3 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
-              <Truck className="h-5 w-5 text-brand-orange" aria-hidden="true" />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-brand-grey">
-                  Included
-                </p>
-                <p className="text-sm font-semibold text-brand-dark">Full Supply &amp; Install</p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </article>
-  )
+function RetainingWallShowcaseBlock({ service }: { service: HomeService }) {
+  const { title, description, href } = service
+  return <RetainingWallShowcase title={title} description={description} href={href} />
 }
 
+const REMEDIAL_IMAGES = {
+  main: {
+    src: '/images/services/remedial-brickwork/04.jpg',
+    alt: 'helical bar crack stitching on a brick wall — jc brick and blocklaying melbourne',
+  },
+  detail: {
+    src: '/images/services/remedial-brickwork/02.jpg',
+    alt: 'stainless steel helical bar installed in mortar joint — jc brick and blocklaying melbourne',
+  },
+  process: {
+    src: '/images/services/remedial-brickwork/06.jpg',
+    alt: 'remedial mortar reinstatement on cracked brickwork — jc brick and blocklaying melbourne',
+  },
+} as const
+
 function RemedialShowcase({ service }: { service: HomeService }) {
-  const { Icon, title, description, href, image } = service
+  const { Icon, title, description, href } = service
 
   return (
-    <article className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-brand-grey/10">
-      <div className="grid items-center gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
-        <Reveal direction="left" className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="relative min-h-[22rem] md:min-h-[26rem]">
-            <div className="absolute left-[8%] top-[6%] z-10 w-[55%] overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/images/services/remedial-brickwork/04.jpg"
-                  alt="remedial brickwork repair on a brick wall — jc brick and blocklaying melbourne"
+    <article>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+        <Reveal direction="left" className="relative w-full">
+          <div className="flex flex-col gap-5">
+            <div className="relative min-h-[26rem] w-full sm:min-h-[30rem] lg:min-h-[34rem] xl:min-h-[38rem]">
+              <div className="absolute left-0 top-0 z-10 w-[58%] sm:w-[54%]">
+                <FramedImage
+                  src={REMEDIAL_IMAGES.detail.src}
+                  alt={REMEDIAL_IMAGES.detail.alt}
                   fill
-                  sizes="240px"
-                  className="object-cover"
+                  sizes="(max-width: 1024px) 55vw, 28vw"
+                  frameClassName="relative aspect-[4/5] rounded-2xl"
+                />
+              </div>
+              <div className="absolute right-0 top-0 z-20 w-[72%] sm:w-[68%]">
+                <FramedImage
+                  src={REMEDIAL_IMAGES.main.src}
+                  alt={REMEDIAL_IMAGES.main.alt}
+                  fill
+                  sizes="(max-width: 1024px) 75vw, 38vw"
+                  frameClassName="relative aspect-[3/4] rounded-2xl sm:aspect-[4/5]"
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 z-10 w-[52%] sm:w-[48%]">
+                <FramedImage
+                  src={REMEDIAL_IMAGES.process.src}
+                  alt={REMEDIAL_IMAGES.process.alt}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 26vw"
+                  frameClassName="relative aspect-square rounded-2xl sm:aspect-[5/4]"
                 />
               </div>
             </div>
-            <div className="absolute right-0 top-0 z-20 w-[62%] overflow-hidden rounded-2xl shadow-2xl">
-              <div className="relative aspect-[3/4]">
-                <Image
-                  src={image}
-                  alt={service.imageAlt ?? title}
-                  fill
-                  sizes="(max-width: 1024px) 70vw, 35vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="absolute bottom-[4%] left-0 z-10 w-[48%] overflow-hidden rounded-2xl shadow-lg ring-2 ring-white">
-              <div className="relative aspect-square">
-                <Image
-                  src="/images/services/remedial-brickwork/11.jpg"
-                  alt="helical bar crack stitching detail — jc brick and blocklaying melbourne"
-                  fill
-                  sizes="200px"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="absolute bottom-[12%] left-[6%] z-30 flex items-center gap-3 rounded-2xl bg-brand-orange px-5 py-4 text-white shadow-xl">
+
+            <div className="flex w-fit items-center gap-3 rounded-2xl bg-brand-orange px-5 py-4 text-white shadow-lg shadow-brand-orange/25">
               <Icon className="h-7 w-7 shrink-0" aria-hidden="true" />
               <div>
                 <p className="font-display text-2xl font-bold leading-none">21+</p>
@@ -299,7 +236,7 @@ function RemedialShowcase({ service }: { service: HomeService }) {
             {REMEDIAL_FEATURES.map(({ Icon: FeatureIcon, title: featureTitle, body }) => (
               <div
                 key={featureTitle}
-                className="group rounded-2xl border border-brand-grey/10 bg-brand-light/50 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-orange/25 hover:shadow-md"
+                className="group rounded-2xl border border-brand-grey/15 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-orange/30 hover:shadow-md"
               >
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange transition-colors group-hover:bg-brand-orange group-hover:text-white">
                   <FeatureIcon className="h-5 w-5" aria-hidden="true" />
@@ -348,7 +285,7 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
           )}
           {second && (
             <Reveal direction="up" repeat delay={40}>
-              <RetainingWallShowcase service={second} />
+              <RetainingWallShowcaseBlock service={second} />
             </Reveal>
           )}
           {third && (
@@ -377,10 +314,10 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
                 </Link>
               </div>
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {remaining.map((s, i) => (
-                <Reveal key={s.href} direction="zoom" delay={(i % 4) * 90}>
-                  <ServiceCard {...s} />
+                <Reveal key={s.href} direction="zoom" delay={(i % 2) * 100}>
+                  <ServiceStoryCard {...s} />
                 </Reveal>
               ))}
             </div>

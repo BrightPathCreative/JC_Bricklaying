@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { FramedImage } from '@/components/ui/FramedImage'
 import {
   Award,
   BrickWall,
@@ -33,7 +33,6 @@ import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { TrustedOn } from '@/components/sections/TrustedOn'
-import { Parallax } from '@/components/Parallax'
 import { REVIEWS } from '@/lib/constants'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.home, path: '/' })
@@ -100,7 +99,8 @@ const HOME_SERVICES = [
     title: 'New Builds & Architectural Brickwork',
     href: '/services/new-builds-architectural-brickwork',
     Icon: HomeIcon,
-    image: '/images/hero/service-new-builds-architectural-brickwork.jpg',
+    image: '/images/services/new-builds-architectural-brickwork/04.jpg',
+    imageAlt: 'architectural brick feature column on a new home — jc brick and blocklaying melbourne',
     description:
       "Jamie takes on new residential builds and architectural brickwork across Melbourne's east. Every enquiry is assessed on its own merits, so get in touch to discuss your project.",
   },
@@ -276,16 +276,15 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={80} className="order-1 lg:order-2">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src="/images/gallery/heritage-36.jpg"
-                alt="jamie craig laying heritage brickwork on site — jc brick and blocklaying melbourne"
-                width={1050}
-                height={1400}
-                className="h-full w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <FramedImage
+              src="/images/gallery/heritage-36.jpg"
+              alt="jamie craig laying heritage brickwork on site — jc brick and blocklaying melbourne"
+              width={1050}
+              height={1400}
+              frameClassName="rounded-2xl"
+              className="h-full w-full"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </Reveal>
         </div>
       </section>
@@ -300,33 +299,32 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* AWARD SECTION */}
-      <section className="grain-overlay relative overflow-hidden bg-brand-dark">
-        <div className="container-bpc section-pad relative grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr]">
-          <Reveal direction="zoom" repeat className="flex justify-center">
-            <Parallax speed={0.1}>
-              <Image
-                src="/images/brand/award-badge.jpg"
-                alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
-                width={320}
-                height={320}
-                className="h-auto w-56 rounded-full md:w-64"
-              />
-            </Parallax>
+      <section className="border-y border-white/10 bg-brand-grey">
+        <div className="container-bpc relative grid items-center gap-8 py-10 md:grid-cols-[auto_1fr] md:gap-12 md:py-12 lg:gap-14">
+          <Reveal direction="zoom" repeat className="flex justify-center md:justify-start">
+            <FramedImage
+              src="/images/brand/award-badge.jpg"
+              alt="quality business awards 2026 top 1 percent — jc brick blocklaying maroondah"
+              width={320}
+              height={320}
+              frameClassName="rounded-full"
+              border="orange"
+              className="h-auto w-40 object-contain md:w-48"
+            />
           </Reveal>
           <Reveal direction="right" repeat delay={80}>
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            <p className="eyebrow text-brand-orange">Quality Business Awards 2026</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white md:text-3xl">
               Recognised as One of Melbourne&apos;s Best
             </h2>
-            <div className="mt-5 space-y-4 text-white/80">
-              <p>
-                In 2026, JC Brick &amp; Blocklaying was recognised in the top 1% of businesses in the
-                Maroondah region by the Quality Business Awards. It&apos;s not something Jamie went
-                looking for. It&apos;s recognition of what his clients already knew.
-              </p>
-              <p>
-                Hard work. Clean finishes. Someone who turns up on time and does the job properly.
-              </p>
-            </div>
+            <p className="mt-4 max-w-2xl text-white/80">
+              In 2026, JC Brick &amp; Blocklaying was recognised in the top 1% of businesses in the
+              Maroondah region by the Quality Business Awards. It&apos;s not something Jamie went
+              looking for. It&apos;s recognition of what his clients already knew.
+            </p>
+            <p className="mt-4 max-w-2xl text-base font-semibold leading-relaxed text-brand-orange md:text-lg">
+              Hard work. Clean finishes. Someone who turns up on time and does the job properly.
+            </p>
           </Reveal>
         </div>
       </section>

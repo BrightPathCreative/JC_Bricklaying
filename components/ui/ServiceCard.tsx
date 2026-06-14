@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight, type LucideIcon } from 'lucide-react'
+import { FramedImage } from '@/components/ui/FramedImage'
 
 interface ServiceCardProps {
   title: string
@@ -19,18 +19,21 @@ export function ServiceCard({ title, description, href, Icon, image, imageAlt }:
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-grey/15 bg-white shadow-sm ring-0 ring-brand-orange/0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-brand-orange/40 hover:shadow-xl hover:ring-1 hover:ring-brand-orange/20"
     >
       {image && (
-        <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
-            src={image}
-            alt={imageAlt ?? title}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 via-transparent to-transparent transition-opacity duration-300 group-hover:from-brand-dark/40" />
-          <span className="absolute bottom-3 left-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-orange text-white shadow-md transition-transform duration-300 group-hover:-translate-y-0.5">
-            <Icon className="h-5 w-5" aria-hidden="true" />
-          </span>
+        <div className="p-3 pb-0">
+          <div className="relative">
+            <FramedImage
+              src={image}
+              alt={imageAlt ?? title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              frameClassName="relative aspect-[16/10] rounded-xl"
+              className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-brand-dark/30 via-transparent to-transparent transition-opacity duration-300 group-hover:from-brand-dark/40" />
+            <span className="absolute bottom-3 left-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-orange text-white shadow-md transition-transform duration-300 group-hover:-translate-y-0.5">
+              <Icon className="h-5 w-5" aria-hidden="true" />
+            </span>
+          </div>
         </div>
       )}
       <div className="flex flex-1 flex-col p-6 md:p-7">

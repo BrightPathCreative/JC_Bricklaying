@@ -80,6 +80,32 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='60'%3E%3Cg fill='none' stroke='%231a1a1a' stroke-width='1' opacity='0.05'%3E%3Cpath d='M0 0H90M0 30H90M0 60H90'/%3E%3Cpath d='M45 0V30M0 30V60M90 30V60M67.5 30V60M22.5 30V60M0 0V30M90 0V30'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 90px 60px;
   }
+
+  /* Photo frame — thin border, soft orange glow behind content images. */
+  .img-frame {
+    @apply relative overflow-hidden border border-brand-dark;
+    box-shadow:
+      0 0 36px -8px rgba(224, 123, 32, 0.32),
+      0 10px 28px -10px rgba(26, 26, 26, 0.14);
+    transition:
+      box-shadow 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out);
+  }
+
+  .img-frame-orange {
+    @apply border-brand-orange;
+    box-shadow:
+      0 0 40px -6px rgba(224, 123, 32, 0.45),
+      0 10px 28px -10px rgba(26, 26, 26, 0.12);
+  }
+
+  .group:hover .img-frame,
+  .img-frame:hover {
+    @apply border-brand-orange;
+    box-shadow:
+      0 0 44px -6px rgba(224, 123, 32, 0.48),
+      0 12px 32px -10px rgba(26, 26, 26, 0.16);
+  }
 }
 
 @layer utilities {
