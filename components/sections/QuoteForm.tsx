@@ -1,7 +1,6 @@
 'use client'
 
 import { useFormState, useFormStatus } from 'react-dom'
-import { CheckCircle2 } from 'lucide-react'
 import { submitQuote, type QuoteFormState } from '@/app/actions'
 import { ENQUIRY_OPTIONS } from '@/lib/constants'
 
@@ -54,22 +53,6 @@ export function QuoteForm({ tone = 'default', compact = false }: QuoteFormProps)
 
   const formSpacing = compact ? 'space-y-3' : 'space-y-4'
   const gridGap = compact ? 'gap-3' : 'gap-4'
-
-  if (state.status === 'success') {
-    return (
-      <div className="flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-lg">
-        <CheckCircle2 className="h-12 w-12 text-brand-orange" aria-hidden="true" />
-        <p className="mt-4 text-lg font-medium text-brand-dark">{state.message}</p>
-        <p className="mt-2 text-sm text-brand-grey">
-          Prefer to talk now?{' '}
-          <a href="tel:+61402723175" className="font-medium text-brand-orange">
-            Click to Call Jamie
-          </a>
-          .
-        </p>
-      </div>
-    )
-  }
 
   return (
     <form action={formAction} noValidate className={formSpacing} aria-label="Request a free quote">

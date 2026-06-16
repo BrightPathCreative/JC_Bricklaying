@@ -1,5 +1,6 @@
 'use server'
 
+import { redirect } from 'next/navigation'
 import { ENQUIRY_OPTIONS } from '@/lib/constants'
 
 export interface QuoteFormState {
@@ -82,9 +83,5 @@ export async function submitQuote(
     console.info('[Quote enquiry — CRM endpoint pending]', data)
   }
 
-  return {
-    status: 'success',
-    firstName: data.firstName,
-    message: `Thanks ${data.firstName}! We've received your enquiry and Jamie will be in touch within 1 business day.`,
-  }
+  redirect(`/thank-you?firstName=${encodeURIComponent(data.firstName)}`)
 }
