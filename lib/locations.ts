@@ -91,3 +91,8 @@ export const LOCATION_BY_SLUG: Record<string, Location> = LOCATIONS.reduce(
   },
   {} as Record<string, Location>,
 )
+
+/** Suburb display name → `/areas/[slug]` path segment. */
+export const LOCATION_SLUG_BY_NAME: Record<string, string> = Object.fromEntries(
+  LOCATIONS.map((l) => [l.name, l.slug]),
+)
