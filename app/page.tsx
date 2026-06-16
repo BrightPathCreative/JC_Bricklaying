@@ -124,7 +124,7 @@ export default function HomePage() {
               Tell Jamie about your project. No obligation.
             </p>
             <div className="mt-4">
-              <QuoteForm tone="light" compact />
+              <QuoteForm />
             </div>
           </div>
         </div>
