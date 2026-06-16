@@ -4,15 +4,18 @@ import Script from 'next/script'
 
 const FORM_ID = 'zMwDnlewmlpapZLz0aN4'
 const IFRAME_ID = `inline-${FORM_ID}`
-const FORM_HEIGHT = 627
+const FORM_HEIGHT = 605
 
 /** GoHighLevel enquiry form embed (Bright Path Creative). */
 export function QuoteForm() {
   return (
-    <div className="w-full overflow-hidden rounded-lg" style={{ minHeight: FORM_HEIGHT }}>
+    <div
+      className="w-full overflow-hidden rounded-lg bg-white"
+      style={{ height: FORM_HEIGHT }}
+    >
       <iframe
         src={`https://links.brightpathcreative.com.au/widget/form/${FORM_ID}`}
-        style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+        style={{ width: '100%', height: FORM_HEIGHT, border: 'none', borderRadius: '8px' }}
         id={IFRAME_ID}
         data-layout={"{'id':'INLINE'}"}
         data-trigger-type="alwaysShow"

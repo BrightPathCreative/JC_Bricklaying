@@ -112,19 +112,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div
-            id="quote"
-            className="animate-[fade-up_800ms_var(--ease-out)_both] scroll-mt-24 w-full max-w-md rounded-2xl border border-white/20 bg-white/82 p-5 shadow-xl backdrop-blur-md md:p-6 lg:ml-auto"
-            style={{ animationDelay: '450ms' }}
-          >
-            <h2 className="text-xl font-semibold tracking-tight text-brand-dark">
-              Get My Free Quote
-            </h2>
-            <p className="mt-1 text-xs text-brand-grey">
-              Tell Jamie about your project. No obligation.
-            </p>
-            <div className="mt-4">
-              <QuoteForm />
+          <div id="quote" className="scroll-mt-24 w-full max-w-md lg:ml-auto">
+            <div className="rounded-2xl border border-brand-grey/15 bg-white p-5 shadow-xl md:p-6">
+              <h2 className="text-xl font-semibold tracking-tight text-brand-dark">
+                Get My Free Quote
+              </h2>
+              <p className="mt-1 text-xs text-brand-grey">
+                Tell Jamie about your project. No obligation.
+              </p>
+              <div className="mt-4">
+                <QuoteForm />
+              </div>
             </div>
           </div>
         </div>
