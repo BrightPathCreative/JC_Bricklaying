@@ -40,7 +40,7 @@ export default function ContactPage() {
       {/* FORM + DETAILS */}
       <section className="section-pad bg-white">
         <div className="container-bpc grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal>
+          <div>
             <div className="rounded-2xl border border-brand-grey/15 bg-white p-6 shadow-lg md:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-brand-dark">
                 Request a Free Quote
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 <QuoteForm />
               </div>
             </div>
-          </Reveal>
+          </div>
 
           <Reveal delay={80} className="space-y-8">
             <div>
