@@ -6,7 +6,7 @@ import { LOCATIONS, LOCATION_BY_SLUG } from '@/lib/locations'
 import { SITE } from '@/lib/constants'
 import { SERVICE_CARDS } from '@/lib/service-cards'
 import { pageMetadata } from '@/lib/metadata'
-import { breadcrumbSchema, faqPageSchema, type FaqItem } from '@/lib/schema'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Button } from '@/components/ui/Button'
 import { ServiceCard } from '@/components/ui/ServiceCard'
@@ -34,23 +34,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   })
 }
 
-function locationFaqs(name: string): FaqItem[] {
-  return [
-    {
-      question: `Does JC Brick & Blocklaying service ${name}?`,
-      answer: `Yes. JC Brick & Blocklaying regularly works in ${name} and the surrounding eastern suburbs of Melbourne. Jamie at JC handles outdoor fireplaces, retaining walls, remedial brickwork, custom mortar matching, heritage restoration, feature walls, and architectural brickwork, all with full supply and install.`,
-    },
-    {
-      question: `How do I get a bricklaying quote in ${name}?`,
-      answer: `Fill in the enquiry form on the contact page or use the Click-to-Call button to reach Jamie directly. He responds to all ${name} enquiries within one business day and provides a clear, itemised, no-obligation quote.`,
-    },
-    {
-      question: `Is JC Brick & Blocklaying insured for work in ${name}?`,
-      answer: `Yes. JC Brick & Blocklaying is fully insured on every job in ${name}, residential or commercial. Insurance details are available on request before any work begins.`,
-    },
-  ]
-}
-
 export default function LocationPage({ params }: { params: { slug: string } }) {
   const loc = getLocation(params.slug)
   if (!loc) notFound()
@@ -59,7 +42,7 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
     { name: 'Areas We Service', path: '/areas' },
     { name: loc.name, path: `/areas/${loc.slug}` },
   ]
-  const faqs = locationFaqs(loc.name)
+  const faqs = loc.faqs
 
   const areaServedSchema = {
     '@context': 'https://schema.org',
