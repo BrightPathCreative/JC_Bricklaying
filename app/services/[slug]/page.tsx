@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Camera, MapPin, Phone } from 'lucide-react'
 import { SERVICES, SERVICE_BY_SLUG, SITE, type ServiceSlug } from '@/lib/constants'
-import { SERVICE_CONTENT } from '@/lib/services-content'
+import { SERVICE_CONTENT, SERVICE_HERO } from '@/lib/services-content'
 import { SERVICE_GALLERY } from '@/lib/service-gallery'
 import { pageMetadata, PAGE_META } from '@/lib/metadata'
 import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
@@ -51,7 +51,11 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
-        <HeroBg src={`/images/hero/service-${meta.slug}.jpg`} priority />
+        <HeroBg
+          src={`/images/hero/service-${meta.slug}.jpg`}
+          alt={SERVICE_HERO[meta.slug].alt}
+          priority
+        />
         <Breadcrumbs crumbs={crumbs} />
         <div className="container-bpc relative pb-16 pt-8 md:pb-24 md:pt-12">
           <Reveal className="max-w-3xl">

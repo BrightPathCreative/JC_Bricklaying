@@ -8,6 +8,7 @@ import {
   Wrench,
   type LucideIcon,
 } from 'lucide-react'
+import { SERVICE_HERO } from '@/lib/services-content'
 
 export interface ServiceCardData {
   title: string
@@ -25,6 +26,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/outdoor-fireplaces-pizza-ovens',
     Icon: Flame,
     image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
+    imageAlt: SERVICE_HERO['outdoor-fireplaces-pizza-ovens'].alt,
     description:
       'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. JC Brick & Blocklaying builds both to last, with full supply and install, matched to your space.',
   },
@@ -33,6 +35,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/block-retaining-walls',
     Icon: BrickWall,
     image: '/images/hero/service-block-retaining-walls.jpg',
+    imageAlt: SERVICE_HERO['block-retaining-walls'].alt,
     description:
       'Big or small, every retaining and dividing wall is built to hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
   },
@@ -41,6 +44,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/remedial-brickwork',
     Icon: Wrench,
     image: '/images/hero/service-remedial-brickwork.jpg',
+    imageAlt: SERVICE_HERO['remedial-brickwork'].alt,
     description:
       "Cracked brickwork doesn't fix itself. Jamie's remedial work, including specialist crack stitching, addresses the cause, not just the symptom.",
   },
@@ -49,7 +53,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/custom-mortar-matching',
     Icon: Palette,
     image: '/images/services/custom-mortar-matching/12.jpg',
-    imageAlt: 'custom matched mortar on clean brickwork — jc brick and blocklaying melbourne',
+    imageAlt: SERVICE_HERO['custom-mortar-matching'].alt,
     description:
       "80 custom mortar colours. If you're restoring heritage brickwork or extending an existing structure, getting the mortar right matters. Jamie has the tools, and the eye, to match it.",
   },
@@ -58,6 +62,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/heritage-brickwork-restoration',
     Icon: Landmark,
     image: '/images/hero/service-heritage-brickwork-restoration.jpg',
+    imageAlt: SERVICE_HERO['heritage-brickwork-restoration'].alt,
     description:
       "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, old brickwork is matched so well you can't see the join.",
   },
@@ -66,7 +71,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/feature-walls-front-fences',
     Icon: Fence,
     image: '/images/services/feature-walls-front-fences/04.jpg',
-    imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
+    imageAlt: SERVICE_HERO['feature-walls-front-fences'].alt,
     description:
       'From internal feature walls to architectural front fences, statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
   },
@@ -75,7 +80,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     href: '/services/new-builds-architectural-brickwork',
     Icon: HomeIcon,
     image: '/images/services/new-builds-architectural-brickwork/04.jpg',
-    imageAlt: 'architectural brick feature column on a new home — jc brick and blocklaying melbourne',
+    imageAlt: SERVICE_HERO['new-builds-architectural-brickwork'].alt,
     description:
       "Jamie takes on new residential builds and architectural brickwork across Melbourne's east. Every enquiry is assessed on its own merits, so get in touch to discuss your project.",
   },

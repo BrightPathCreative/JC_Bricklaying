@@ -9,21 +9,26 @@ type Tone = 'dark' | 'orange'
  */
 export function HeroBg({
   src,
+  alt,
   tone = 'dark',
   priority = false,
   flip = false,
 }: {
   src: string
+  /** SEO alt when the hero photo should be indexed; omit for decorative-only backgrounds. */
+  alt?: string
   tone?: Tone
   priority?: boolean
   /** Mirror the image horizontally. */
   flip?: boolean
 }) {
+  const decorative = !alt
+
   return (
-    <div className="absolute inset-0 -z-10" aria-hidden="true">
+    <div className="absolute inset-0 -z-10" aria-hidden={decorative || undefined}>
       <Image
         src={src}
-        alt=""
+        alt={alt ?? ''}
         fill
         priority={priority}
         sizes="100vw"

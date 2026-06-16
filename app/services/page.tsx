@@ -17,6 +17,7 @@ import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
 import { HeroBg } from '@/components/sections/HeroBg'
 import { CTASection } from '@/components/sections/CTASection'
+import { SERVICE_HERO } from '@/lib/services-content'
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.services, path: '/services' })
 
@@ -29,6 +30,7 @@ const TILES = [
     href: '/services/outdoor-fireplaces-pizza-ovens',
     Icon: Flame,
     image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
+    imageAlt: SERVICE_HERO['outdoor-fireplaces-pizza-ovens'].alt,
     description:
       "Custom outdoor fireplaces and pizza ovens built to suit your backyard. Full supply and install. Popular across the Yarra Valley and Melbourne's east.",
   },
@@ -37,6 +39,7 @@ const TILES = [
     href: '/services/block-retaining-walls',
     Icon: BrickWall,
     image: '/images/hero/service-block-retaining-walls.jpg',
+    imageAlt: SERVICE_HERO['block-retaining-walls'].alt,
     description:
       "Structural retaining and dividing walls built with concrete core fill and steel reinforcement. Residential and builder projects across Melbourne's eastern suburbs.",
   },
@@ -45,6 +48,7 @@ const TILES = [
     href: '/services/remedial-brickwork',
     Icon: Wrench,
     image: '/images/hero/service-remedial-brickwork.jpg',
+    imageAlt: SERVICE_HERO['remedial-brickwork'].alt,
     description:
       'Cracked, damaged, or failing brickwork repaired properly. Specialist crack stitching, dampcourse rectification, and mortar reinstatement.',
   },
@@ -54,7 +58,7 @@ const TILES = [
     href: '/services/custom-mortar-matching',
     Icon: Palette,
     image: '/images/services/custom-mortar-matching/12.jpg',
-    imageAlt: 'custom matched mortar on clean brickwork — jc brick and blocklaying melbourne',
+    imageAlt: SERVICE_HERO['custom-mortar-matching'].alt,
     description:
       '80 custom mortar colours for an exact match on heritage, restoration, and repair work. On-site sampling before any job, so new brickwork blends seamlessly with old.',
   },
@@ -63,6 +67,7 @@ const TILES = [
     href: '/services/heritage-brickwork-restoration',
     Icon: Landmark,
     image: '/images/hero/service-heritage-brickwork-restoration.jpg',
+    imageAlt: SERVICE_HERO['heritage-brickwork-restoration'].alt,
     description:
       "Facade restoration, crack stitching, and dampcourse rectification on period homes across Melbourne's eastern and inner suburbs. 80 custom mortar colours for an exact match, every time.",
   },
@@ -71,7 +76,7 @@ const TILES = [
     href: '/services/feature-walls-front-fences',
     Icon: Fence,
     image: '/images/services/feature-walls-front-fences/04.jpg',
-    imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
+    imageAlt: SERVICE_HERO['feature-walls-front-fences'].alt,
     description:
       'Custom brick feature walls inside and out, plus front fences from simple rendered block to full architectural brick frontages. Mortar matched to your existing home where needed.',
   },
@@ -80,6 +85,7 @@ const TILES = [
     href: '/services/new-builds-architectural-brickwork',
     Icon: Building2,
     image: '/images/hero/service-new-builds-architectural-brickwork.jpg',
+    imageAlt: SERVICE_HERO['new-builds-architectural-brickwork'].alt,
     description:
       "Brick extensions and architectural masonry for residential properties. Jamie works directly with homeowners and architects across Melbourne's eastern suburbs.",
   },
@@ -88,6 +94,8 @@ const TILES = [
     href: '/services/new-builds-architectural-brickwork',
     Icon: HomeIcon,
     image: '/images/services/new-builds-architectural-brickwork/05.jpg',
+    imageAlt:
+      'finished face brickwork on a new build — jc brick and blocklaying melbourne eastern suburbs',
     description:
       "New house brickwork is also available, assessed project by project. If you're building and want a bricklayer who treats it like his own job, get in touch to discuss the details.",
   },
