@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowRight, MapPin, Phone, Star } from 'lucide-react'
+import { MapPin, Phone, Star } from 'lucide-react'
 import { LOCATIONS, LOCATION_BY_SLUG } from '@/lib/locations'
-import { SERVICES, SITE } from '@/lib/constants'
+import { SITE } from '@/lib/constants'
+import { SERVICE_CARDS } from '@/lib/service-cards'
 import { pageMetadata } from '@/lib/metadata'
 import { breadcrumbSchema, faqPageSchema, type FaqItem } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Button } from '@/components/ui/Button'
+import { ServiceCard } from '@/components/ui/ServiceCard'
 import { Reveal } from '@/components/Reveal'
 import { Breadcrumbs } from '@/components/sections/Breadcrumbs'
 import { HeroBg } from '@/components/sections/HeroBg'
@@ -26,7 +28,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!loc) return {}
   return pageMetadata({
     title: `Bricklayer ${loc.name} | JC Brick & Blocklaying`,
-    description: `Fully insured bricklayer in ${loc.name}. Fireplaces, retaining walls, remedial work & heritage restoration. 21 yrs exp. 5★ rated. Free quotes.`,
+    description: loc.metaDescription,
     path: `/areas/${loc.slug}`,
     ogImage: '/images/og/areas.jpg',
   })
@@ -104,25 +106,18 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
             <h2 className="text-2xl font-semibold tracking-tight text-brand-dark md:text-3xl">
               Bricklaying Services in {loc.name}
             </h2>
-            <p className="mt-4 text-brand-grey">
-              Jamie offers the full range of brick and block services to {loc.name} homeowners,
-              builders, and architects. Every job is completed personally, with full supply and
-              install.
-            </p>
+            <p className="mt-4 text-brand-grey">{loc.servicesIntro}</p>
           </Reveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 3) * 60}>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="group flex h-full items-center justify-between gap-3 rounded-xl border border-brand-grey/15 bg-brand-light p-5 transition-all duration-200 hover:border-brand-orange/30 hover:bg-white hover:shadow-md"
-                >
-                  <span className="font-medium text-brand-dark">{s.navLabel}</span>
-                  <ArrowRight
-                    className="h-4 w-4 shrink-0 text-brand-orange transition-transform duration-200 group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
-                </Link>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICE_CARDS.map((service, i) => (
+              <Reveal key={service.href} delay={(i % 3) * 80}>
+                <ServiceCard
+                  {...service}
+                  imageAlt={
+                    service.imageAlt ??
+                    `${service.title} — bricklayer in ${loc.name}, Melbourne`
+                  }
+                />
               </Reveal>
             ))}
           </div>
