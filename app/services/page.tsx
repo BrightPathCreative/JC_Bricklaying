@@ -110,7 +110,7 @@ export default function ServicesHubPage() {
             </h1>
             <p className="mt-5 text-lg text-white/80">
               JC Brick &amp; Blocklaying offers a focused range of masonry and bricklaying services
-              across Melbourne&apos;s eastern suburbs. Jamie Craig handles every job personally, from
+              across Melbourne&apos;s eastern suburbs. Jamie at JC handles every job personally, from
               the first quote through to the final clean-up. Full supply and install. 21 years
               experience. Fully insured.
             </p>

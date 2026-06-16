@@ -24,12 +24,12 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'Is JC Brick & Blocklaying fully insured?',
         answer:
-          "Yes. JC Brick & Blocklaying is fully insured on all projects, including residential, remedial, and structural work. Jamie Craig carries comprehensive insurance for all masonry work, giving clients in Melbourne's eastern suburbs complete confidence. Insurance details are available on request before any work begins.",
+          "Yes. JC Brick & Blocklaying is fully insured on all projects, including residential, remedial, and structural work. Comprehensive insurance covers all masonry work, giving clients in Melbourne's eastern suburbs complete confidence. Insurance details are available on request before any work begins.",
       },
       {
         question: 'Does Jamie Craig use subcontractors?',
         answer:
-          "No. When JC Brick & Blocklaying quotes a job, Jamie Craig and his own team of qualified tradesmen and apprentices complete it. There is no subcontracting. Clients deal directly with Jamie from the first call through to the final clean-up. This is one of the most consistent pieces of feedback in JC Brick & Blocklaying's Google reviews. People appreciate knowing exactly who is on their property.",
+          "No. When JC Brick & Blocklaying quotes a job, Jamie and his own team of qualified tradesmen and apprentices complete it. There is no subcontracting. Clients deal directly with Jamie from the first call through to the final clean-up. This is one of the most consistent pieces of feedback in JC Brick & Blocklaying's Google reviews. People appreciate knowing exactly who is on their property.",
       },
       {
         question: 'How many years of experience does JC Brick & Blocklaying have?',
@@ -49,12 +49,12 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'Does JC Brick & Blocklaying do new house brickwork?',
         answer:
-          "Yes. JC Brick & Blocklaying takes on new house brickwork and architectural projects across Melbourne's eastern suburbs, alongside its core remedial, restoration and outdoor living work. Jamie Craig assesses each enquiry on its merits, so the scope and timing can be discussed when you get in touch. This gives clients the same quality and attention to detail on a new build that JC Brick & Blocklaying is known for on every other job.",
+          "Yes. JC Brick & Blocklaying takes on new house brickwork and architectural projects across Melbourne's eastern suburbs, alongside its core remedial, restoration and outdoor living work. Jamie assesses each enquiry on its merits, so the scope and timing can be discussed when you get in touch. This gives clients the same quality and attention to detail on a new build that JC Brick & Blocklaying is known for on every other job.",
       },
       {
         question: 'Does JC Brick & Blocklaying offer heritage brickwork restoration?',
         answer:
-          "Yes. Heritage brickwork restoration is a specialty of JC Brick & Blocklaying. Jamie Craig carries a 80-colour custom mortar range and has over two decades of experience matching and restoring brickwork on period homes across Melbourne's eastern and inner suburbs. He also provides crack stitching and dampcourse rectification on older homes where structural movement or moisture has caused damage.",
+          "Yes. Heritage brickwork restoration is a specialty of JC Brick & Blocklaying. Jamie at JC carries an 80-colour custom mortar range and has over two decades of experience matching and restoring brickwork on period homes across Melbourne's eastern and inner suburbs. He also provides crack stitching and dampcourse rectification on older homes where structural movement or moisture has caused damage.",
       },
     ],
   },
@@ -69,7 +69,7 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'How quickly does JC Brick & Blocklaying respond to enquiries?',
         answer:
-          'JC Brick & Blocklaying responds to all new enquiries within one business day. Jamie Craig reviews every new enquiry personally. For urgent jobs or quick turnaround assessments, using the Click-to-Call button during business hours is the fastest option. JC Brick & Blocklaying operates Monday to Friday, 7:00am to 5:30pm, and Saturday 9:00am to 3:00pm.',
+          'JC Brick & Blocklaying responds to all new enquiries within one business day. Jamie reviews every new enquiry personally. For urgent jobs or quick turnaround assessments, using the Click-to-Call button during business hours is the fastest option. JC Brick & Blocklaying operates Monday to Friday, 7:00am to 5:30pm, and Saturday 9:00am to 3:00pm.',
       },
     ],
   },
@@ -99,7 +99,7 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'Is custom mortar matching available on all JC Brick & Blocklaying projects?',
         answer:
-          "Yes. Custom mortar matching is available across all JC Brick & Blocklaying services, including outdoor fireplaces, retaining walls, crack stitching, heritage restoration, and extensions. It is a standard part of JC Brick & Blocklaying's service offering, not an optional extra. Jamie Craig assesses the existing mortar on-site and uses his 80-colour range to identify the best match for each individual project.",
+          "Yes. Custom mortar matching is available across all JC Brick & Blocklaying services, including outdoor fireplaces, retaining walls, crack stitching, heritage restoration, and extensions. It is a standard part of JC Brick & Blocklaying's service offering, not an optional extra. Jamie at JC assesses the existing mortar on-site and uses his 80-colour range to identify the best match for each individual project.",
       },
       {
         question: 'Does JC Brick & Blocklaying have a 5-star Google rating?',
@@ -109,7 +109,7 @@ const FAQ_GROUPS: { heading: string; items: FaqItem[] }[] = [
       {
         question: 'What award has JC Brick & Blocklaying received?',
         answer:
-          "In 2026, JC Brick & Blocklaying was recognised in the top 1% of businesses in the Maroondah region by the Quality Business Awards. This recognition reflects the quality of work and client satisfaction that Jamie Craig and his team deliver consistently across Melbourne's eastern suburbs.",
+          "In 2026, JC Brick & Blocklaying was recognised in the top 1% of businesses in the Maroondah region by the Quality Business Awards. This recognition reflects the quality of work and client satisfaction that Jamie and his team deliver consistently across Melbourne's eastern suburbs.",
       },
     ],
   },
@@ -133,7 +133,7 @@ export default function FAQPage() {
             </h1>
             <p className="mt-5 text-lg text-white/80">
               Got a question about a bricklaying project in Melbourne&apos;s eastern suburbs? Below
-              are the questions Jamie Craig hears most often. If yours isn&apos;t here, use the
+              are the questions Jamie at JC hears most often. If yours isn&apos;t here, use the
               Click-to-Call button or the quote form and Jamie will get back to you within one business day.
             </p>
           </Reveal>

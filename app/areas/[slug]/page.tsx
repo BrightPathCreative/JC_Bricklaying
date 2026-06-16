@@ -36,7 +36,7 @@ function locationFaqs(name: string): FaqItem[] {
   return [
     {
       question: `Does JC Brick & Blocklaying service ${name}?`,
-      answer: `Yes. JC Brick & Blocklaying regularly works in ${name} and the surrounding eastern suburbs of Melbourne. Jamie Craig handles outdoor fireplaces, retaining walls, remedial brickwork, custom mortar matching, heritage restoration, feature walls, and architectural brickwork, all with full supply and install.`,
+      answer: `Yes. JC Brick & Blocklaying regularly works in ${name} and the surrounding eastern suburbs of Melbourne. Jamie at JC handles outdoor fireplaces, retaining walls, remedial brickwork, custom mortar matching, heritage restoration, feature walls, and architectural brickwork, all with full supply and install.`,
     },
     {
       question: `How do I get a bricklaying quote in ${name}?`,

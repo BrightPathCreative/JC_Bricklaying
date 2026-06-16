@@ -73,7 +73,7 @@ export const LOCATIONS: Location[] = SUBURBS.map((name, i) => {
     slug,
     name,
     blurb: `Award-winning bricklayer servicing ${name} and the surrounding eastern suburbs.`,
-    intro: `Looking for a reliable, fully insured bricklayer in ${name}? Jamie Craig and JC Brick & Blocklaying have been laying brick and block across Melbourne's eastern suburbs for 21 years. ${note} Full supply and install, custom mortar matching, and a 5.0-star Google rating to back it up.`,
+    intro: `Looking for a reliable, fully insured bricklayer in ${name}? JC Brick & Blocklaying has been laying brick and block across Melbourne's eastern suburbs for 21 years. ${note} Full supply and install, custom mortar matching, and a 5.0-star Google rating to back it up.`,
     nearby: nearby.filter((n) => n !== name),
   }
 })

@@ -64,7 +64,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
     slug: 'outdoor-fireplaces-pizza-ovens',
     h1: 'Outdoor Fireplaces & Pizza Ovens Melbourne: Custom Built, Full Supply & Install',
     intro:
-      "Jamie Craig builds outdoor fireplaces and pizza ovens across Melbourne's eastern suburbs, and both are among his favourite jobs. When you get the design right and the build right, a fireplace or pizza oven is something a family uses for decades. That's what Jamie aims for on every one he builds.",
+      "Jamie at JC builds outdoor fireplaces and pizza ovens across Melbourne's eastern suburbs, and both are among his favourite jobs. When you get the design right and the build right, a fireplace or pizza oven is something a family uses for decades. That's what Jamie aims for on every one he builds.",
     sectionHeading:
       'Outdoor Fireplaces & Pizza Ovens Built to Last: Yarra Valley & Eastern Melbourne',
     blocks: [
@@ -91,12 +91,12 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'Does JC Brick & Blocklaying build outdoor fireplaces in Melbourne?',
         answer:
-          "Yes. Outdoor fireplaces are one of JC Brick & Blocklaying's most in-demand services across Melbourne's eastern suburbs. Jamie Craig handles the full project, from design through to supply and build, so clients don't have to coordinate multiple trades. Every fireplace is built to a high standard, fully insured, and completed with Jamie on-site for the duration of the work.",
+          "Yes. Outdoor fireplaces are one of JC Brick & Blocklaying's most in-demand services across Melbourne's eastern suburbs. JC Brick & Blocklaying handles the full project, from design through to supply and build, so clients don't have to coordinate multiple trades. Every fireplace is built to a high standard, fully insured, and completed with Jamie on-site for the duration of the work.",
       },
       {
         question: 'Does JC Brick & Blocklaying build pizza ovens in Melbourne?',
         answer:
-          "Yes. Pizza ovens are a popular standalone build or addition to an outdoor fireplace project across Melbourne's eastern suburbs. Jamie Craig designs and builds each pizza oven to suit the space, with full supply and install included. Whether it's part of a larger entertaining area or a feature on its own, the result is built to last and finished to match the rest of your outdoor area.",
+          "Yes. Pizza ovens are a popular standalone build or addition to an outdoor fireplace project across Melbourne's eastern suburbs. Jamie designs and builds each pizza oven to suit the space, with full supply and install included. Whether it's part of a larger entertaining area or a feature on its own, the result is built to last and finished to match the rest of your outdoor area.",
       },
       {
         question: 'How long does it take to build an outdoor fireplace or pizza oven?',
@@ -152,7 +152,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'Does JC Brick & Blocklaying build structural retaining walls in Melbourne?',
         answer:
-          "Yes. Structural block retaining walls are one of JC Brick & Blocklaying's core services across Melbourne's eastern suburbs. Jamie Craig builds every retaining wall with concrete core fill and steel reinforcement, ensuring long-term stability and compliance with Australian building standards.",
+          "Yes. Structural block retaining walls are one of JC Brick & Blocklaying's core services across Melbourne's eastern suburbs. Every retaining wall is built with concrete core fill and steel reinforcement, ensuring long-term stability and compliance with Australian building standards.",
       },
       {
         question: 'What types of retaining walls does JC Brick & Blocklaying build?',
@@ -162,7 +162,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'How much does a block retaining wall cost in Melbourne?',
         answer:
-          'Retaining wall costs vary depending on height, length, site access, and ground conditions. JC Brick & Blocklaying provides free, itemised quotes for every retaining wall project. Jamie Craig can usually assess and quote within one to two business days of an enquiry.',
+          'Retaining wall costs vary depending on height, length, site access, and ground conditions. JC Brick & Blocklaying provides free, itemised quotes for every retaining wall project. Jamie can usually assess and quote within one to two business days of an enquiry.',
       },
       {
         question: 'Does JC Brick & Blocklaying work with builders on retaining wall projects?',
@@ -181,7 +181,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
     slug: 'remedial-brickwork',
     h1: 'Remedial Brickwork Melbourne: Crack Stitching & Masonry Repairs',
     intro:
-      "Cracked or deteriorating brickwork doesn't improve on its own. JC Brick & Blocklaying provides specialist remedial brickwork and crack stitching across Melbourne's eastern suburbs. Jamie Craig diagnoses the issue, fixes it properly, and leaves you with a result that holds.",
+      "Cracked or deteriorating brickwork doesn't improve on its own. JC Brick & Blocklaying provides specialist remedial brickwork and crack stitching across Melbourne's eastern suburbs. Jamie at JC diagnoses the issue, fixes it properly, and leaves you with a result that holds.",
     sectionHeading: 'Crack Stitching and Masonry Repairs',
     blocks: [
       {
@@ -207,7 +207,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'Does JC Brick & Blocklaying specialise in crack stitching?',
         answer:
-          "Yes. Crack stitching and remedial brickwork are among JC Brick & Blocklaying's most requested services across Melbourne's eastern suburbs. Jamie Craig uses the correct stainless steel helical bar method to stabilise cracked masonry and prevent further movement.",
+          "Yes. Crack stitching and remedial brickwork are among JC Brick & Blocklaying's most requested services across Melbourne's eastern suburbs. Jamie uses the correct stainless steel helical bar method to stabilise cracked masonry and prevent further movement.",
       },
       {
         question: 'What causes cracks in brick walls?',
@@ -262,7 +262,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'Does JC Brick & Blocklaying offer custom mortar matching in Melbourne?',
         answer:
-          "Yes. Custom mortar matching is one of JC Brick & Blocklaying's premium services and a key differentiator from other bricklayers in Melbourne's eastern suburbs. Jamie Craig carries a chart of 80 custom mortar colours and uses on-site sampling to ensure an accurate match before work begins.",
+          "Yes. Custom mortar matching is one of JC Brick & Blocklaying's premium services and a key differentiator from other bricklayers in Melbourne's eastern suburbs. Jamie at JC carries a chart of 80 custom mortar colours and uses on-site sampling to ensure an accurate match before work begins.",
       },
       {
         question: 'How does Jamie match mortar on heritage or period brickwork?',
@@ -346,7 +346,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
     slug: 'feature-walls-front-fences',
     h1: 'Feature Walls & Front Fences Melbourne: Custom Brickwork, Full Supply & Install',
     intro:
-      "A good feature wall or front fence sets the tone for the whole property. Jamie Craig builds both, from internal feature walls to architectural front fences, across Melbourne's eastern suburbs, with full supply and install on every job.",
+      "A good feature wall or front fence sets the tone for the whole property. JC Brick & Blocklaying builds both, from internal feature walls to architectural front fences, across Melbourne's eastern suburbs, with full supply and install on every job.",
     sectionHeading: 'Feature Walls & Front Fences Built to Suit Your Property',
     blocks: [
       {
@@ -401,7 +401,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
     slug: 'new-builds-architectural-brickwork',
     h1: 'New Builds & Architectural Brickwork Melbourne: Quality Masonry, Done Right',
     intro:
-      "JC Brick & Blocklaying takes on new residential builds and architectural brickwork projects across Melbourne's eastern suburbs, selectively. Jamie Craig isn't chasing volume. He's after jobs where the brickwork matters, where the client cares about the finish, and where there's room to do the work properly.",
+      "JC Brick & Blocklaying takes on new residential builds and architectural brickwork projects across Melbourne's eastern suburbs, selectively. Jamie at JC isn't chasing volume. He's after jobs where the brickwork matters, where the client cares about the finish, and where there's room to do the work properly.",
     sectionHeading: "What's Included",
     blocks: [
       {
@@ -431,7 +431,7 @@ export const SERVICE_CONTENT: Record<ServiceSlug, ServiceContent> = {
       {
         question: 'Does JC Brick & Blocklaying take on new residential home builds in Melbourne?',
         answer:
-          "Yes. JC Brick & Blocklaying takes on new residential home builds across Melbourne's eastern suburbs on a selective basis. Jamie Craig works with homeowners, architects, and boutique builders who value quality workmanship and clear communication.",
+          "Yes. JC Brick & Blocklaying takes on new residential home builds across Melbourne's eastern suburbs on a selective basis. Jamie works with homeowners, architects, and boutique builders who value quality workmanship and clear communication.",
       },
       {
         question: 'Does JC Brick & Blocklaying work with architects on new build projects?',

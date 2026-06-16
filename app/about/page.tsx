@@ -50,7 +50,7 @@ export default function AboutPage() {
           <Reveal className="max-w-3xl">
             <p className="eyebrow">Owner · Jamie Craig</p>
             <h1 className="mt-3 text-5xl font-bold leading-[0.95] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
-              About Jamie Craig: Bricklayer Melbourne, Eastern Suburbs
+              About JC Brick &amp; Blocklaying: Bricklayer Melbourne, Eastern Suburbs
             </h1>
           </Reveal>
         </div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-4 text-brand-grey">
               <p>
-                Jamie Craig started laying brick when he was 15. He&apos;s now 37, and in that time
+                Jamie started laying brick when he was 15. He&apos;s now 37, and in that time
                 he&apos;s worked on everything from landmark Melbourne institutions to family
                 backyards in the outer east. He started JC Brick &amp; Blocklaying because he wanted
                 to run his own jobs his own way, and deliver the kind of finish that actually makes

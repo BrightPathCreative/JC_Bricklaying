@@ -65,8 +65,10 @@ hero_one "$(first_in p08b-feature-walls_bluestone 1)" "$OUT/hero/gallery.jpg"
 hero_one "$(first_in p08-heritage-restoration 1)" "$OUT/hero/faq.jpg"
 hero_one "$(first_in p07b-new-builds_multi-unit 1)" "$OUT/hero/areas.jpg"
 
-for slug in outdoor-fireplaces-pizza-ovens block-retaining-walls remedial-brickwork custom-mortar-matching heritage-brickwork-restoration feature-walls-front-fences new-builds-architectural-brickwork; do
+for slug in outdoor-fireplaces-pizza-ovens remedial-brickwork custom-mortar-matching heritage-brickwork-restoration feature-walls-front-fences new-builds-architectural-brickwork; do
   hero_one "$OUT/services/$slug/01.jpg" "$OUT/hero/service-$slug.jpg"
 done
+# Retaining walls: use the pool-side block wall (cleaner composition than the laying shot in 01)
+hero_one "$(first_in p05-retaining-walls_retaining 12)" "$OUT/hero/service-block-retaining-walls.jpg"
 
 echo "done"

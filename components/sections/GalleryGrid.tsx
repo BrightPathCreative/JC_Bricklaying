@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { FramedImage } from '@/components/ui/FramedImage'
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ImageLightbox } from '@/components/ui/ImageLightbox'
 import { GALLERY, GALLERY_CATEGORIES, type GalleryCategory } from '@/lib/gallery'
 
 export function GalleryGrid() {
@@ -28,21 +28,6 @@ export function GalleryGrid() {
     () => setLightbox((i) => (i === null ? i : (i - 1 + images.length) % images.length)),
     [images.length],
   )
-
-  useEffect(() => {
-    if (lightbox === null) return
-    document.body.style.overflow = 'hidden'
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
-      if (e.key === 'ArrowRight') next()
-      if (e.key === 'ArrowLeft') prev()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', onKey)
-    }
-  }, [lightbox, close, next, prev])
 
   const current = lightbox !== null ? images[lightbox] : null
 
@@ -95,69 +80,19 @@ export function GalleryGrid() {
         ))}
       </div>
 
-      {/* Lightbox */}
-      {current && (
-        <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image viewer"
-          onClick={close}
-        >
-          <button
-            type="button"
-            onClick={close}
-            className="absolute right-4 top-4 rounded-full bg-white/10 p-2.5 text-white transition-colors duration-150 hover:bg-white/20"
-            aria-label="Close"
-          >
-            <X className="h-6 w-6" aria-hidden="true" />
-          </button>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation()
-              prev()
-            }}
-            className="absolute left-2 rounded-full bg-white/10 p-2.5 text-white transition-colors duration-150 hover:bg-white/20 sm:left-6"
-            aria-label="Previous image"
-          >
-            <ChevronLeft className="h-7 w-7" aria-hidden="true" />
-          </button>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation()
-              next()
-            }}
-            className="absolute right-2 rounded-full bg-white/10 p-2.5 text-white transition-colors duration-150 hover:bg-white/20 sm:right-6"
-            aria-label="Next image"
-          >
-            <ChevronRight className="h-7 w-7" aria-hidden="true" />
-          </button>
-
-          <figure
-            className="relative max-h-[85vh] w-auto max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <FramedImage
-              src={current.src}
-              alt={current.alt}
-              width={current.width}
-              height={current.height}
-              sizes="90vw"
-              frameClassName="rounded-lg"
-              border="orange"
-              className="max-h-[85vh] w-auto object-contain"
-              priority
-            />
-            <figcaption className="mt-3 text-center text-sm text-white/70">
-              {current.category} · {(lightbox ?? 0) + 1} / {images.length}
-            </figcaption>
-          </figure>
-        </div>
-      )}
+      <ImageLightbox
+        open={current !== null}
+        src={current?.src ?? ''}
+        alt={current?.alt ?? ''}
+        width={current?.width ?? 1400}
+        height={current?.height ?? 1400}
+        index={lightbox ?? 0}
+        total={images.length}
+        caption={current ? `${current.category} · ${(lightbox ?? 0) + 1} / ${images.length}` : undefined}
+        onClose={close}
+        onPrev={prev}
+        onNext={next}
+      />
     </>
   )
 }

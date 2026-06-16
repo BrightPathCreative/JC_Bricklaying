@@ -55,7 +55,7 @@ export const PAGE_META = {
   about: {
     title: 'About JC Brick & Blocklaying | Bricklayer Melbourne',
     description:
-      "21 years of bricklaying across Melbourne's east. Jamie Craig — award-winning, fully insured, no subcontracting. Learn more about JC Brick.",
+      "21 years of bricklaying across Melbourne's east. JC Brick & Blocklaying — award-winning, owner-run by Jamie, fully insured, no subcontracting.",
     ogImage: '/images/og/about.jpg',
   },
   services: {

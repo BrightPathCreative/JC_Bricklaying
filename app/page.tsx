@@ -51,7 +51,7 @@ const HOME_SERVICES = [
     Icon: Flame,
     image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
     description:
-      'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. Jamie builds both to last, with full supply and install, matched to your space.',
+      'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. JC Brick & Blocklaying builds both to last, with full supply and install, matched to your space.',
   },
   {
     title: 'Block Retaining & Dividing Walls',
@@ -59,7 +59,7 @@ const HOME_SERVICES = [
     Icon: BrickWall,
     image: '/images/hero/service-block-retaining-walls.jpg',
     description:
-      'Big or small, Jamie builds retaining and dividing walls that hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
+      'Big or small, every retaining and dividing wall is built to hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
   },
   {
     title: 'Remedial Work & Crack Stitching',
@@ -84,7 +84,7 @@ const HOME_SERVICES = [
     Icon: Landmark,
     image: '/images/hero/service-heritage-brickwork-restoration.jpg',
     description:
-      "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, Jamie matches old brickwork so well you can't see the join.",
+      "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, old brickwork is matched so well you can't see the join.",
   },
   {
     title: 'Feature Walls & Front Fences',
@@ -93,7 +93,7 @@ const HOME_SERVICES = [
     image: '/images/services/feature-walls-front-fences/04.jpg',
     imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
     description:
-      'From internal feature walls to architectural front fences, Jamie builds statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
+      'From internal feature walls to architectural front fences, statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
   },
   {
     title: 'New Builds & Architectural Brickwork',
@@ -110,7 +110,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     question: 'Does JC Brick & Blocklaying do outdoor fireplaces?',
     answer:
-      "Yes. Outdoor fireplaces are one of JC Brick & Blocklaying's most popular services. Jamie Craig builds fully custom outdoor fireplaces and pizza ovens across Melbourne's eastern suburbs, with full supply and install included. Every fireplace is built to last, designed to suit the space, and finished to a high standard. Whether it's a simple freestanding fireplace or a full outdoor entertaining setup, Jamie handles it from start to finish.",
+      "Yes. Outdoor fireplaces are one of JC Brick & Blocklaying's most popular services. The team builds fully custom outdoor fireplaces and pizza ovens across Melbourne's eastern suburbs, with full supply and install included. Every fireplace is built to last, designed to suit the space, and finished to a high standard. Whether it's a simple freestanding fireplace or a full outdoor entertaining setup, Jamie at JC handles it from start to finish.",
   },
   {
     question: 'What areas does JC Brick & Blocklaying service?',
@@ -120,7 +120,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     question: 'Is JC Brick & Blocklaying fully insured?',
     answer:
-      'Yes, JC Brick & Blocklaying is fully insured. Jamie Craig carries comprehensive insurance on every job, giving clients peace of mind whether the project is a residential backyard fireplace or a structural block retaining wall. This is confirmed upfront, along with a clear, itemised quote before any work begins.',
+      'Yes, JC Brick & Blocklaying is fully insured. Comprehensive insurance covers every job, giving clients peace of mind whether the project is a residential backyard fireplace or a structural block retaining wall. This is confirmed upfront, along with a clear, itemised quote before any work begins.',
   },
   {
     question: 'How do I get a quote from JC Brick & Blocklaying?',
@@ -250,7 +250,7 @@ export default function HomePage() {
             </h2>
             <div className="mt-5 space-y-4 text-brand-grey">
               <p>
-                Jamie Craig has been laying brick and block since he was 15. That&apos;s 21 years on
+                Jamie at JC Brick &amp; Blocklaying has been laying brick and block since he was 15. That&apos;s 21 years on
                 the tools across Melbourne&apos;s east, from outdoor fireplaces in Chirnside Park to
                 retaining walls in Ringwood, and crack stitching in Doncaster to heritage
                 restoration in Balwyn.
