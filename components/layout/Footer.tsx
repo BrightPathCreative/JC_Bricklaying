@@ -163,6 +163,17 @@ export function Footer() {
           <p className="mt-4 text-center text-xs text-white/50">
             © {year} JC Brick &amp; Blocklaying Pty Ltd. All rights reserved.
           </p>
+          <p className="mt-2 text-center text-xs text-white/40">
+            Website designed, developed and managed by{' '}
+            <a
+              href="https://www.brightpathcreative.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-150 hover:text-brand-orange"
+            >
+              Bright Path Creative
+            </a>
+          </p>
         </div>
       </div>
     </footer>
