@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
+import { Facebook, Instagram, MapPin, Phone } from 'lucide-react'
 import { SITE, SERVICES } from '@/lib/constants'
 import { LOCATIONS } from '@/lib/locations'
+import { Button } from '@/components/ui/Button'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -26,20 +27,16 @@ export function Footer() {
                   {SITE.callLabel}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="inline-flex items-center gap-2 transition-colors duration-150 hover:text-brand-orange"
-                >
-                  <Mail className="h-4 w-4 text-brand-orange" aria-hidden="true" />
-                  {SITE.email}
-                </a>
-              </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" aria-hidden="true" />
                 <span>{SITE.address.display}</span>
               </li>
             </ul>
+            <div className="mt-5">
+              <Button href="/contact" size="md">
+                Contact
+              </Button>
+            </div>
           </div>
 
           {/* Quick links */}
