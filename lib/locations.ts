@@ -7,6 +7,10 @@ export interface Location {
   blurb: string
   /** Lead intro paragraph for the location page. */
   intro: string
+  /** SEO intro for the services section on the location page. */
+  servicesIntro: string
+  /** Meta description for the location page. */
+  metaDescription: string
   /** Nearby suburbs JC also services (internal-link cluster). */
   nearby: string[]
 }
@@ -72,8 +76,10 @@ export const LOCATIONS: Location[] = SUBURBS.map((name, i) => {
   return {
     slug,
     name,
-    blurb: `Award-winning bricklayer servicing ${name} and the surrounding eastern suburbs.`,
+    blurb: `Fully insured bricklayer in ${name} — fireplaces, retaining walls, remedial work, heritage restoration and custom mortar matching.`,
     intro: `Looking for a reliable, fully insured bricklayer in ${name}? Jamie Craig and JC Brick & Blocklaying have been laying brick and block across Melbourne's eastern suburbs for 21 years. ${note} Full supply and install, custom mortar matching, and a 5.0-star Google rating to back it up.`,
+    servicesIntro: `From outdoor fireplaces and block retaining walls to remedial brickwork, custom mortar matching, and heritage restoration, Jamie delivers the full range of brick and block services to ${name} homeowners, builders, and architects. Every job is completed personally — full supply and install, one tradie, one quote, one finish.`,
+    metaDescription: `${name} bricklayer Jamie Craig — outdoor fireplaces, retaining walls, remedial brickwork, custom mortar matching and heritage restoration. 21 years experience, fully insured, 5★ rated. Free quotes.`,
     nearby: nearby.filter((n) => n !== name),
   }
 })
