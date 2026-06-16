@@ -26,7 +26,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     Icon: Flame,
     image: '/images/hero/service-outdoor-fireplaces-pizza-ovens.jpg',
     description:
-      'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. Jamie builds both to last, with full supply and install, matched to your space.',
+      'A properly built outdoor fireplace or pizza oven is one of the best investments you can make in your backyard. JC Brick & Blocklaying builds both to last, with full supply and install, matched to your space.',
   },
   {
     title: 'Block Retaining & Dividing Walls',
@@ -34,7 +34,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     Icon: BrickWall,
     image: '/images/hero/service-block-retaining-walls.jpg',
     description:
-      'Big or small, Jamie builds retaining and dividing walls that hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
+      'Big or small, every retaining and dividing wall is built to hold. Concrete core fill, steel reinforcement, and the kind of attention to detail that prevents problems down the track.',
   },
   {
     title: 'Remedial Work & Crack Stitching',
@@ -59,7 +59,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     Icon: Landmark,
     image: '/images/hero/service-heritage-brickwork-restoration.jpg',
     description:
-      "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, Jamie matches old brickwork so well you can't see the join.",
+      "Restoring a period home takes an eye for the original work. With 21 years on heritage homes and 80 custom mortar colours, old brickwork is matched so well you can't see the join.",
   },
   {
     title: 'Feature Walls & Front Fences',
@@ -68,7 +68,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     image: '/images/services/feature-walls-front-fences/04.jpg',
     imageAlt: 'architectural brick feature columns on a modern facade — jc brick and blocklaying melbourne',
     description:
-      'From internal feature walls to architectural front fences, Jamie builds statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
+      'From internal feature walls to architectural front fences, statement brickwork that sets the tone for the whole property. Full supply and install, matched to your home.',
   },
   {
     title: 'New Builds & Architectural Brickwork',
