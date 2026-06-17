@@ -121,7 +121,7 @@ export default function HomePage() {
                 Tell Jamie about your project. No obligation.
               </p>
               <div className="mt-4">
-                <QuoteForm />
+                <QuoteForm priority />
               </div>
             </div>
           </div>
