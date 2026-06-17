@@ -48,7 +48,7 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Bricklaying and masonry',
-    provider: { '@type': 'LocalBusiness', name: SITE.name, telephone: '+61-4-0272-3175' },
+    provider: { '@type': 'LocalBusiness', name: SITE.name, telephone: '+61-485-043-175' },
     areaServed: { '@type': 'Place', name: `${loc.name}, Victoria, Australia` },
     url: `${SITE.url}/areas/${loc.slug}`,
   }

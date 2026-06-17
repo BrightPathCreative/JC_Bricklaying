@@ -11,7 +11,7 @@ export const localBusinessSchema = {
   description:
     "Award-winning bricklayer and masonry specialist serving Melbourne's eastern suburbs. Outdoor fireplaces, retaining walls, remedial work, and custom mortar matching. 21 years experience. Fully insured.",
   url: SITE.url,
-  telephone: '+61-4-0272-3175',
+  telephone: '+61-485-043-175',
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',

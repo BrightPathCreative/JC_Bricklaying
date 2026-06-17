@@ -3,8 +3,8 @@ export const SITE = {
   shortName: 'JC Brick & Blocklaying',
   owner: 'Jamie Craig',
   abn: '95 667 976 963',
-  phone: '0402 723 175', // Personal mobile — never displayed; used only for the tel: link
-  phoneTel: '+61402723175', // tel: link format
+  phone: '0485 043 175', // GHL CRM number — used for tel: links
+  phoneTel: '+61485043175', // tel: link format
   /** Visible label used everywhere in place of the raw number. */
   callLabel: 'Click to Call',
   email: 'jcbrickblocklaying@gmail.com',

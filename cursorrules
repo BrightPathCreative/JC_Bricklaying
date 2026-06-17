@@ -248,7 +248,7 @@ The phone number must be clickable on every page at all times on mobile.
 ```tsx
 // Sticky mobile CTA — present on every page via layout
 <a
-  href="tel:+61402723175"
+  href="tel:+61485043175"
   className="fixed bottom-4 right-4 z-50 md:hidden bg-brand-orange text-white px-5 py-3 rounded-full font-semibold shadow-lg"
 >
   Call Jamie
@@ -257,7 +257,7 @@ The phone number must be clickable on every page at all times on mobile.
 
 ### Primary CTA — Wording is Non-Negotiable
 - Primary: `Get My Free Quote` or `Request a Free Quote`
-- Secondary: `Call Jamie` (links to `tel:+61402723175`)
+- Secondary: `Call Jamie` (links to `tel:+61485043175`)
 - Form submit: `Get My Free Quote` or `Send My Quote Request`
 - Never: `Submit`, `Contact Us` as standalone CTA, `Click Here`
 
@@ -271,7 +271,7 @@ The form must:
 - Display the confirmation message after successful submission (not a redirect)
 
 ### CRM Phone Number
-The CRM lead gen number is not yet provisioned. The current personal mobile `0402 723 175` is used as a temporary placeholder in all click-to-call and tel: links. When the CRM number is confirmed by BPC, do a global find-and-replace — it appears in: Header, Footer, Hero, Contact page, sticky mobile CTA, and LocalBusiness schema.
+The GHL CRM number `0485 043 175` (+61 485 043 175) is used in all click-to-call and tel: links via SITE.phoneTel in lib/constants.ts.
 
 ---
 
