@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE } from '@/lib/constants'
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BackToTop />
         <CookieConsent />
         <Script src={GHL_FORM_EMBED_SCRIPT} strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   )
