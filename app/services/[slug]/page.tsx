@@ -14,6 +14,7 @@ import { HeroBg } from '@/components/sections/HeroBg'
 import { ServiceGallery } from '@/components/sections/ServiceGallery'
 import { FAQAccordion } from '@/components/sections/FAQAccordion'
 import { CTASection } from '@/components/sections/CTASection'
+import { SuburbLinks } from '@/components/sections/SuburbLinks'
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }))
@@ -124,6 +125,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               Service Areas
             </h2>
             <p className="mt-4 text-brand-grey">{content.serviceAreas}</p>
+            <SuburbLinks />
           </Reveal>
         </div>
       </section>

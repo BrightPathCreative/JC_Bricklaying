@@ -10,7 +10,6 @@ import { SITE } from '@/lib/constants'
 import { SERVICE_CARDS } from '@/lib/service-cards'
 import { pageMetadata, PAGE_META } from '@/lib/metadata'
 import {
-  aggregateRatingSchema,
   reviewSchemas,
   faqPageSchema,
   type FaqItem,
@@ -71,7 +70,7 @@ const HOME_FAQS: FaqItem[] = [
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={[aggregateRatingSchema, ...reviewSchemas, faqPageSchema(HOME_FAQS)]} />
+      <JsonLd data={[...reviewSchemas, faqPageSchema(HOME_FAQS)]} />
 
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">

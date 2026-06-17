@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE } from '@/lib/constants'
-import { GHL_DNS_PREFETCH_ORIGINS, GHL_FORM_EMBED_SCRIPT, GHL_FORM_SRC, GHL_PRECONNECT_ORIGINS } from '@/lib/ghl-form'
+import { GHL_DNS_PREFETCH_ORIGINS, GHL_PRECONNECT_ORIGINS } from '@/lib/ghl-form'
 import { localBusinessSchema, organizationSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Header } from '@/components/layout/Header'
@@ -44,7 +43,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-AU" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="preload" href={GHL_FORM_SRC} as="document" />
         {GHL_PRECONNECT_ORIGINS.map((origin) => (
           <link key={origin} rel="preconnect" href={origin} crossOrigin="anonymous" />
         ))}
@@ -56,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-brand-orange focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-brand-orange-dark focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to main content
         </a>
@@ -66,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyCallButton />
         <BackToTop />
         <CookieConsent />
-        <Script src={GHL_FORM_EMBED_SCRIPT} strategy="afterInteractive" />
         <Analytics />
       </body>
     </html>

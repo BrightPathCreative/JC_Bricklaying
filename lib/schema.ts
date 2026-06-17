@@ -82,7 +82,7 @@ export const reviewSchemas = REVIEWS.map((r) => ({
   },
   author: { '@type': 'Person', name: r.author },
   reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-  datePublished: r.date,
+  datePublished: r.date.length === 7 ? `${r.date}-01` : r.date,
   reviewBody: r.body,
 }))
 

@@ -8,10 +8,7 @@ type Props = {
   iframeId: string
 }
 
-/**
- * Placeholder shown until the GHL iframe finishes loading.
- * The iframe itself stays server-rendered so fetching starts on first paint.
- */
+/** Placeholder shown until the deferred GHL iframe finishes loading. */
 export function QuoteFormSkeleton({ iframeId }: Props) {
   const [loaded, setLoaded] = useState(false)
 

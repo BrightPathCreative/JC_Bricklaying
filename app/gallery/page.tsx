@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { pageMetadata, PAGE_META } from '@/lib/metadata'
 import { breadcrumbSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
@@ -29,7 +30,15 @@ export default function GalleryPage() {
             <p className="mt-5 text-lg text-white/80">
               A selection of recent projects from JC Brick &amp; Blocklaying — outdoor fireplaces,
               retaining walls, heritage restoration, feature walls, and architectural new builds.
-              Every job is Jamie&apos;s own work, finished to the standard you can see here.
+              Every job is Jamie&apos;s own work, finished to the standard you can see here. Browse{' '}
+              <Link href="/services" className="font-medium text-brand-orange underline">
+                our services
+              </Link>{' '}
+              or{' '}
+              <Link href="/areas" className="font-medium text-brand-orange underline">
+                service areas
+              </Link>
+              .
             </p>
           </Reveal>
         </div>

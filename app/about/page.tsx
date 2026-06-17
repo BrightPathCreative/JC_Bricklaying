@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { FramedImage } from '@/components/ui/FramedImage'
 import { HardHat, Handshake, Layers, Palette } from 'lucide-react'
 import { pageMetadata, PAGE_META } from '@/lib/metadata'
@@ -170,7 +171,15 @@ export default function AboutPage() {
               JC Brick &amp; Blocklaying is fully insured on every job. Jamie has been laying brick
               across Melbourne&apos;s eastern suburbs for 21 years. He&apos;s worked in residential,
               commercial, and heritage settings, and he brings that full range of experience to
-              every project he takes on.
+              every project he takes on. Explore{' '}
+              <Link href="/services" className="font-medium text-brand-orange underline">
+                our services
+              </Link>{' '}
+              and{' '}
+              <Link href="/areas" className="font-medium text-brand-orange underline">
+                service areas
+              </Link>
+              .
             </p>
           </Reveal>
         </div>

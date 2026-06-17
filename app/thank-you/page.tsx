@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   description:
     'Your bricklaying quote enquiry has been received. Jamie will respond within one business day.',
   robots: { index: false, follow: false },
-  alternates: { canonical: `${SITE.url}/thank-you` },
 }
 
 const NEXT_STEPS = [

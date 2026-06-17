@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     'How JC Brick & Blocklaying collects, uses and protects your personal information when you request a quote or use our website.',
   path: '/privacy-policy',
+  ogImage: '/images/og/home.jpg',
 })
 
 const crumbs = [{ name: 'Privacy Policy', path: '/privacy-policy' }]
@@ -64,18 +65,47 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2>Disclosure of your information</h2>
               <p>
-                We do not sell your personal information. We will not share it with third parties
-                except where necessary to deliver our services (for example, our customer enquiry
-                management provider), where you have consented, or where required by law.
+                We do not sell your personal information. We may share it with trusted service
+                providers where necessary to deliver our services, including:
+              </p>
+              <ul>
+                <li>
+                  Our customer enquiry and CRM platform (GoHighLevel / LeadConnector), which
+                  processes quote form submissions;
+                </li>
+                <li>
+                  Google Analytics, if you accept analytics cookies, to help us understand site
+                  usage; and
+                </li>
+                <li>
+                  Vercel Web Analytics, a privacy-focused, cookieless analytics service that helps
+                  us measure page views and site performance.
+                </li>
+              </ul>
+              <p className="mt-3">
+                We will also disclose information where you have consented, or where required by
+                law.
               </p>
             </div>
 
             <div>
               <h2>Cookies and analytics</h2>
               <p>
-                Our website may use cookies and analytics tools to understand how visitors use the
-                site. You can disable cookies through your browser settings. Declining analytics
-                cookies will not affect your ability to request a quote.
+                Our website uses a cookie consent banner. Your choice is stored in your browser
+                (local storage) so we can remember whether you accepted or declined optional
+                analytics cookies.
+              </p>
+              <p className="mt-3">
+                If you accept, we may load Google Analytics 4 to understand how visitors use the
+                site. If you decline, Google Analytics will not load. Vercel Web Analytics runs
+                without cookies and does not require consent under typical Australian privacy
+                practice, but we disclose it here for transparency.
+              </p>
+              <p className="mt-3">
+                The quote form is embedded from our CRM provider and may set its own cookies or
+                collect technical data needed to process your enquiry. You can disable cookies
+                through your browser settings. Declining analytics cookies will not affect your
+                ability to request a quote.
               </p>
             </div>
 

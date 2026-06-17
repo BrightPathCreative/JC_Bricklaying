@@ -1,7 +1,13 @@
+import type { Metadata } from 'next'
 import { Button } from '@/components/ui/Button'
 import { SITE } from '@/lib/constants'
 import { Phone } from 'lucide-react'
 import { HeroBg } from '@/components/sections/HeroBg'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | JC Brick & Blocklaying',
+  robots: { index: false, follow: false },
+}
 
 export default function NotFound() {
   return (

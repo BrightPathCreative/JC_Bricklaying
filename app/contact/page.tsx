@@ -105,7 +105,11 @@ export default function ContactPage() {
               <p className="mt-4 text-sm text-brand-grey">
                 JC Brick &amp; Blocklaying is based in Croydon, Melbourne, and services Melbourne&apos;s
                 eastern suburbs, from Blackburn and Doncaster in the north-west through to Healesville
-                and Mount Evelyn in the Yarra Valley.
+                and Mount Evelyn in the Yarra Valley.{' '}
+                <Link href="/areas" className="font-medium text-brand-orange underline">
+                  View all service areas
+                </Link>
+                .
               </p>
             </div>
           </Reveal>

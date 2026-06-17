@@ -1,3 +1,5 @@
+import { SITE_URL } from './site-url'
+
 export const SITE = {
   name: 'JC Brick & Blocklaying Pty Ltd',
   shortName: 'JC Brick & Blocklaying',
@@ -8,7 +10,7 @@ export const SITE = {
   /** Visible label used everywhere in place of the raw number. */
   callLabel: 'Click to Call',
   email: 'jcbrickblocklaying@gmail.com',
-  url: 'https://jcbricklaying.com.au',
+  url: SITE_URL,
   /** Service-area business — based in Croydon, no public street address. */
   address: {
     suburb: 'Croydon',

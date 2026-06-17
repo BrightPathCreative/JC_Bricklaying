@@ -18,7 +18,7 @@ export function pageMetadata({
   title,
   description,
   path,
-  ogImage = '/images/og/homepage.jpg',
+  ogImage = '/images/og/home.jpg',
 }: PageMetaInput): Metadata {
   const canonical = path === '/' ? SITE.url : `${SITE.url}${path}`
 
