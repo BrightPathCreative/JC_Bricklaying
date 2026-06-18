@@ -28,7 +28,6 @@ import { CTASection } from '@/components/sections/CTASection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { TrustedOn } from '@/components/sections/TrustedOn'
 import { REVIEWS } from '@/lib/constants'
-import { GHL_FORM_HEIGHT } from '@/lib/ghl-form'
 
 const HERO_IMAGE = '/images/services/outdoor-fireplaces-pizza-ovens/02.jpg'
 
@@ -37,19 +36,10 @@ const QuoteForm = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div
-        className="relative w-full overflow-hidden rounded-lg bg-white"
-        style={{ height: GHL_FORM_HEIGHT }}
-        aria-hidden="true"
-      >
-        <div className="flex h-full flex-col gap-3 p-1">
-          <div className="h-4 w-28 animate-pulse rounded bg-brand-grey/15" />
-          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
-          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
-          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
-          <div className="h-24 animate-pulse rounded-md bg-brand-grey/10" />
-          <div className="mt-1 h-11 animate-pulse rounded-md bg-brand-orange/20" />
-        </div>
+      <div className="mt-4 space-y-2.5" aria-hidden="true">
+        <div className="h-4 w-full animate-pulse rounded bg-brand-grey/10" />
+        <div className="h-4 w-[80%] animate-pulse rounded bg-brand-grey/10" />
+        <div className="mt-2 h-11 animate-pulse rounded-full bg-brand-grey/15" />
       </div>
     ),
   },
