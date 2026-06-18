@@ -31,6 +31,8 @@ export function HeroBg({
         alt={alt ?? ''}
         fill
         priority={priority}
+        unoptimized={priority}
+        quality={priority ? 80 : undefined}
         sizes="100vw"
         className={`h-full w-full object-cover${flip ? ' scale-x-[-1]' : ''}`}
       />

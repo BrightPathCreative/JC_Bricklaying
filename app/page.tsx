@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { FramedImage } from '@/components/ui/FramedImage'
 import {
   Award,
@@ -19,7 +20,7 @@ import { Button } from '@/components/ui/Button'
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase'
 import { ReviewCard } from '@/components/ui/ReviewCard'
 import { Reveal } from '@/components/Reveal'
-import { QuoteForm } from '@/components/sections/QuoteForm'
+import { HeroPreload } from '@/components/sections/HeroPreload'
 import { HeroBg } from '@/components/sections/HeroBg'
 import { ServiceAreas } from '@/components/sections/ServiceAreas'
 import { FAQAccordion } from '@/components/sections/FAQAccordion'
@@ -27,6 +28,32 @@ import { CTASection } from '@/components/sections/CTASection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { TrustedOn } from '@/components/sections/TrustedOn'
 import { REVIEWS } from '@/lib/constants'
+import { GHL_FORM_HEIGHT } from '@/lib/ghl-form'
+
+const HERO_IMAGE = '/images/services/outdoor-fireplaces-pizza-ovens/02.jpg'
+
+const QuoteForm = dynamic(
+  () => import('@/components/sections/QuoteForm').then((m) => m.QuoteForm),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="relative w-full overflow-hidden rounded-lg bg-white"
+        style={{ height: GHL_FORM_HEIGHT }}
+        aria-hidden="true"
+      >
+        <div className="flex h-full flex-col gap-3 p-1">
+          <div className="h-4 w-28 animate-pulse rounded bg-brand-grey/15" />
+          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
+          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
+          <div className="h-10 animate-pulse rounded-md bg-brand-grey/10" />
+          <div className="h-24 animate-pulse rounded-md bg-brand-grey/10" />
+          <div className="mt-1 h-11 animate-pulse rounded-md bg-brand-orange/20" />
+        </div>
+      </div>
+    ),
+  },
+)
 
 export const metadata: Metadata = pageMetadata({ ...PAGE_META.home, path: '/' })
 
@@ -70,11 +97,12 @@ const HOME_FAQS: FaqItem[] = [
 export default function HomePage() {
   return (
     <>
+      <HeroPreload src={HERO_IMAGE} />
       <JsonLd data={[...reviewSchemas, faqPageSchema(HOME_FAQS)]} />
 
       {/* HERO */}
       <section className="grain-overlay relative isolate overflow-hidden bg-brand-dark">
-        <HeroBg src="/images/services/outdoor-fireplaces-pizza-ovens/02.jpg" priority flip />
+        <HeroBg src={HERO_IMAGE} priority flip />
         <div className="container-bpc relative grid items-center gap-10 py-16 md:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
             <p

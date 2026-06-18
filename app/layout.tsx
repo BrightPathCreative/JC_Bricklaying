@@ -3,7 +3,6 @@ import { Analytics } from '@vercel/analytics/next'
 import { Barlow_Condensed, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE } from '@/lib/constants'
-import { GHL_DNS_PREFETCH_ORIGINS, GHL_PRECONNECT_ORIGINS } from '@/lib/ghl-form'
 import { localBusinessSchema, organizationSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/JsonLd'
 import { Header } from '@/components/layout/Header'
@@ -43,12 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-AU" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <head>
-        {GHL_PRECONNECT_ORIGINS.map((origin) => (
-          <link key={origin} rel="preconnect" href={origin} crossOrigin="anonymous" />
-        ))}
-        {GHL_DNS_PREFETCH_ORIGINS.map((origin) => (
-          <link key={origin} rel="dns-prefetch" href={origin} />
-        ))}
         <JsonLd data={[localBusinessSchema, organizationSchema]} />
       </head>
       <body>

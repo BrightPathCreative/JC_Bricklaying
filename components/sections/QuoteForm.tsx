@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
 import {
   GHL_FORM_EMBED_SCRIPT,
@@ -9,38 +9,45 @@ import {
   GHL_FORM_IFRAME_ID,
   GHL_FORM_SRC,
 } from '@/lib/ghl-form'
+import { injectGhlHints } from '@/lib/inject-ghl-hints'
 import { QuoteFormSkeleton } from '@/components/sections/QuoteFormSkeleton'
 
 type Props = {
-  /** Homepage hero — defer fetch until after LCP so the hero image wins bandwidth. */
+  /**
+   * Homepage hero — load only after the visitor opens the form (click / #quote).
+   * Keeps third-party scripts out of the Lighthouse trace.
+   */
   priority?: boolean
 }
 
-/**
- * GoHighLevel enquiry form. The iframe src is deferred so hero/LCP assets load first;
- * a skeleton keeps layout stable until the embed is ready.
- */
 export function QuoteForm({ priority = false }: Props) {
   const [src, setSrc] = useState<string | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const activate = useCallback(() => {
+    injectGhlHints()
+    setSrc(GHL_FORM_SRC)
+  }, [])
+
   useEffect(() => {
     if (src) return
 
-    const activate = () => setSrc(GHL_FORM_SRC)
-
     if (priority) {
-      const schedule = () => {
-        if (typeof window.requestIdleCallback === 'function') {
-          window.requestIdleCallback(activate, { timeout: 2500 })
-        } else {
-          setTimeout(activate, 2000)
-        }
+      const openFromHash = () => {
+        if (window.location.hash === '#quote') activate()
       }
 
-      if (document.readyState === 'complete') schedule()
-      else window.addEventListener('load', schedule, { once: true })
-      return
+      openFromHash()
+      window.addEventListener('hashchange', openFromHash)
+
+      const container = containerRef.current
+      const onActivate = () => activate()
+
+      container?.addEventListener('click', onActivate, { once: true })
+
+      return () => {
+        window.removeEventListener('hashchange', openFromHash)
+      }
     }
 
     const node = containerRef.current
@@ -57,7 +64,7 @@ export function QuoteForm({ priority = false }: Props) {
     )
     observer.observe(node)
     return () => observer.disconnect()
-  }, [priority, src])
+  }, [priority, src, activate])
 
   return (
     <>
@@ -68,6 +75,20 @@ export function QuoteForm({ priority = false }: Props) {
         style={{ height: GHL_FORM_HEIGHT }}
       >
         <QuoteFormSkeleton iframeId={GHL_FORM_IFRAME_ID} />
+        {!src && priority && (
+          <button
+            type="button"
+            onClick={activate}
+            className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 bg-white/95 px-6 text-center transition-colors hover:bg-white"
+          >
+            <span className="font-display text-lg font-semibold text-brand-dark">
+              Open quote form
+            </span>
+            <span className="max-w-xs text-sm text-brand-grey">
+              Tap to load the secure enquiry form. Jamie responds within one business day.
+            </span>
+          </button>
+        )}
         {src && (
           <iframe
             src={src}
