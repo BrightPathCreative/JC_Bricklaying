@@ -10,7 +10,7 @@ interface ReviewCardProps {
 export function ReviewCard({ author, dateLabel, body, rating = 5 }: ReviewCardProps) {
   return (
     <figure className="flex h-full flex-col rounded-2xl border border-brand-grey/15 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg md:p-8">
-      <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      <div className="flex items-center gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
         {Array.from({ length: rating }).map((_, i) => (
           <Star key={i} className="h-5 w-5 fill-brand-orange text-brand-orange" aria-hidden="true" />
         ))}

@@ -64,9 +64,9 @@ export function Header() {
           <Image
             src="/images/brand/logo.png"
             alt="jc brick and blocklaying logo — bricklayer melbourne eastern suburbs"
-            width={906}
-            height={723}
-            priority
+            width={192}
+            height={153}
+            sizes="(max-width: 768px) 128px, 192px"
             className={`w-auto transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled ? 'h-12 md:h-16' : 'h-16 md:h-24'
             }`}
@@ -87,7 +87,7 @@ export function Header() {
                   href={item.href}
                   className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors duration-150 ${
                     isActive(item.href)
-                      ? 'text-brand-orange'
+                      ? 'text-brand-orange-dark'
                       : 'text-brand-dark hover:text-brand-orange'
                   }`}
                   aria-expanded={servicesOpen}
@@ -131,7 +131,7 @@ export function Header() {
                 href={item.href}
                 className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-150 ${
                   isActive(item.href)
-                    ? 'text-brand-orange'
+                    ? 'text-brand-orange-dark'
                     : 'text-brand-dark hover:text-brand-orange'
                 }`}
                 aria-current={isActive(item.href) ? 'page' : undefined}

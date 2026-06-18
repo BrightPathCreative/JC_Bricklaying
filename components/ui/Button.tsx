@@ -8,7 +8,7 @@ const base =
   'inline-flex items-center justify-center gap-2 rounded-full font-body font-medium text-center transition-colors duration-150 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2'
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-brand-orange text-white hover:bg-brand-orange-dark',
+  primary: 'bg-brand-dark text-white hover:bg-brand-orange-dark',
   secondary:
     'bg-transparent text-white ring-2 ring-white/70 hover:bg-brand-dark hover:ring-brand-dark',
   ghost:

@@ -46,7 +46,7 @@ export function GalleryGrid() {
               onClick={() => setActive(cat)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-150 ${
                 isActive
-                  ? 'bg-brand-orange text-white'
+                  ? 'bg-brand-orange-dark text-white'
                   : 'border border-brand-grey/25 bg-white text-brand-dark hover:border-brand-orange hover:text-brand-orange'
               }`}
             >

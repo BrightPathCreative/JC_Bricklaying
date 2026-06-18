@@ -48,7 +48,7 @@ export function ProcessSection() {
           {STEPS.map((step, i) => (
             <Reveal key={step.title} delay={i * 90} className="relative">
               <div className="flex items-center gap-4">
-                <span className="relative z-10 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-orange text-white shadow-lg shadow-brand-orange/20">
+                <span className="relative z-10 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/20">
                   <step.Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <span className="font-display text-5xl font-bold leading-none text-brand-dark/10">

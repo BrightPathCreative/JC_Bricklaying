@@ -37,7 +37,7 @@ export function ServiceStoryCard({
         aria-hidden="true"
       />
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col p-6 md:p-7">
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-orange text-white shadow-lg shadow-brand-orange/30 transition-transform duration-300 group-hover:-translate-y-0.5">
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-orange-dark text-white shadow-lg shadow-brand-orange/30 transition-transform duration-300 group-hover:-translate-y-0.5">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <h3 className="mt-4 text-xl font-bold leading-snug text-white md:text-2xl">{title}</h3>
@@ -45,7 +45,7 @@ export function ServiceStoryCard({
           {description}
         </p>
         <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-orange transition-colors group-hover:text-white">
-          Learn more
+          Learn more about {title.toLowerCase()}
           <ArrowRight
             className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
             aria-hidden="true"

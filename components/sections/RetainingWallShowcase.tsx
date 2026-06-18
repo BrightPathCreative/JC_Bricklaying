@@ -87,7 +87,7 @@ export function RetainingWallShowcase({
                     onClick={() => setActive(tab.id)}
                     className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
                       selected
-                        ? 'bg-brand-orange text-white shadow-md shadow-brand-orange/20'
+                        ? 'bg-brand-orange-dark text-white shadow-md shadow-brand-orange/20'
                         : 'bg-white text-brand-dark ring-1 ring-brand-grey/20 hover:ring-brand-orange/35'
                     }`}
                   >
@@ -116,7 +116,7 @@ export function RetainingWallShowcase({
               href={href}
               className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-orange transition-colors hover:text-brand-orange-dark"
             >
-              Learn more
+              Learn more about block retaining walls
               <ArrowRight
                 className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                 aria-hidden="true"

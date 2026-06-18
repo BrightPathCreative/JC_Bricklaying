@@ -43,13 +43,13 @@ const REMEDIAL_FEATURES = [
   },
 ] as const
 
-function LearnMoreLink({ href }: { href: string }) {
+function LearnMoreLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
       className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-orange transition-colors hover:text-brand-orange-dark"
     >
-      Learn more
+      {label}
       <ArrowRight
         className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
         aria-hidden="true"
@@ -239,7 +239,7 @@ function RemedialShowcase({ service }: { service: HomeService }) {
               Remedial Services
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Button>
-            <LearnMoreLink href={href} />
+            <LearnMoreLink href={href} label="Learn more about remedial brickwork" />
           </div>
         </Reveal>
       </div>
