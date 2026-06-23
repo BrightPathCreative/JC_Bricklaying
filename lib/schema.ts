@@ -1,12 +1,18 @@
 import { SITE, SUBURBS, REVIEWS } from './constants'
 
+/** Canonical @id for the business entity — links Review/AggregateRating across JSON-LD blocks. */
+export const BUSINESS_SCHEMA_ID = `${SITE.url}/#business`
+
 /**
  * LocalBusiness (MasonryContractor) — injected in the root layout on every page.
+ * LocalBusiness must be the primary @type so nested aggregateRating is eligible for
+ * Review snippets (Google does not accept MasonryContractor alone as the parent type).
  * Values match the Developer Brief exactly. Do not recalculate.
  */
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MasonryContractor',
+  '@type': ['LocalBusiness', 'MasonryContractor'],
+  '@id': BUSINESS_SCHEMA_ID,
   name: SITE.name,
   description:
     "Award-winning bricklayer and masonry specialist serving Melbourne's eastern suburbs. Outdoor fireplaces, retaining walls, remedial work, and custom mortar matching. 21 years experience. Fully insured.",
@@ -59,26 +65,12 @@ export const organizationSchema = {
   sameAs: [SITE.social.gbp, SITE.social.facebook, SITE.social.instagram],
 }
 
-/** AggregateRating — Home page. */
-export const aggregateRatingSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'AggregateRating',
-  itemReviewed: {
-    '@type': 'LocalBusiness',
-    name: SITE.name,
-  },
-  ratingValue: '5.0',
-  reviewCount: '15',
-  bestRating: '5',
-}
-
 /** Review schema (×3) — Home page. Verbatim review text. */
 export const reviewSchemas = REVIEWS.map((r) => ({
   '@context': 'https://schema.org',
   '@type': 'Review',
   itemReviewed: {
-    '@type': 'LocalBusiness',
-    name: SITE.name,
+    '@id': BUSINESS_SCHEMA_ID,
   },
   author: { '@type': 'Person', name: r.author },
   reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
